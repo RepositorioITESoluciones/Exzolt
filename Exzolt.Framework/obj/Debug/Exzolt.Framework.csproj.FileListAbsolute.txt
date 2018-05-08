@@ -1,0 +1,5 @@
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\bin\Debug\Exzolt.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\bin\Debug\Exzolt.Framework.pdb
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\obj\Debug\Exzolt.Framework.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\obj\Debug\Exzolt.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Framework\obj\Debug\Exzolt.Framework.pdb

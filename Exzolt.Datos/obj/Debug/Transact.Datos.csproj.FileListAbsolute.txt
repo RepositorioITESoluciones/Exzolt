@@ -1,0 +1,10 @@
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Transact.Datos.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Transact.Datos.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Transact.Entidades.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Transact.Framework.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Transact.Entidades.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Transact.Framework.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\obj\Debug\Transact.Datos.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\obj\Debug\Transact.Datos.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Datos\obj\Debug\Transact.Datos.pdb

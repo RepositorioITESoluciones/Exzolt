@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Reporte OEE</title>
+    <script src="js/reportes/reporteMantenimientoXEquipos.js"></script>
+    <script type="text/javascript" src="jquery/js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="jquery/js/jquery-ui-1.8.13.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+   
+</head>
+<body>
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa fa-inbox fa-fw"></i> Reporte Mantenimiento por Equipos
+        </h1>
+    </div>
+
+    <section id="widget-grid">
+        <div id="divTiposTransaccion" class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="AdminTransaccion" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><label id="Title"><strong>Reporte de equipos en base al número de mantenimientos.</strong></label></h2>
+                    </header>
+                    <div>
+
+                        <div id="FormReporte" class="row" style="display: none">
+                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+
+
+                                    <div class="widget-body" style="padding-bottom: 0px">
+
+                                        <form id="FormParametros" class="smart-form">
+
+                                            <div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+                                                <section class="col col-6">
+                                                    <div class=" required">
+
+                                                        <label class="control-label"> Fecha Inicio</label>
+                                                    </div>
+                                                    <div class=" form-group">
+                                                        <input type="datetime" id="FechaInicio" onkeypress="" class="form-control" name="FechaInicio" value="" />
+                                                    </div>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <div class=" required">
+
+                                                        <label class="control-label"> Fecha Fin</label>
+                                                    </div>
+                                                    <div class=" form-group">
+                                                        <input type="datetime" id="FechaFin" onkeypress="" class="form-control" name="FechaFin" value="" />
+                                                    </div>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <div class=" required">
+                                                        <label class="control-label"> Departamento</label>
+                                                    </div>
+                                                    <div class=" form-group">
+                                                        <select type="text" id="ComboDepar" onkeypress="" class="form-control" name="ComboDepar"></select>
+                                                    </div>
+                                                </section>
+
+                                            </div>
+                                        </form>
+
+                                        <div id="botones" class="widget-body-toolbar">
+                                            <button id="btnbuscar" type="button" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-arrow"></i> Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div id="tablasReporte" class="widget-body">
+                            <table id="detalleMantenimiento" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Departamento" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Máquina" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Mantenimiento" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Fecha" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Empleado" />
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th data-class="expand">Departamento</th>
+                                        <th data-class="expand">Máquina</th>
+                                        <th data-class="expand">Mantenimiento</th>
+                                        <th data-class="expand">Fecha</th>
+                                        <th data-class="expand">Empleado</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+
+</head>
+<body>
+
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa fa-inbox fa-fw"></i> Crud 
+        </h1>
+    </div>
+
+
+    <section id="widget-grid">
+        <div id="divTiposTransaccion" class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="AdminTransaccion" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Detalle Usuario<label id="Title"></label></strong></h2>
+                    </header>
+                    <div>
+                        <!--<div class="jarviswidget-editbox">
+                            <input class="form-control" type="text">
+                            <span class="note"><i class="fa fa-check text-success"></i> Puede cambiar el titulo de este control</span>
+                        </div>-->
+                        <div class="widget-body-toolbar">
+                            <button id="btnPlus" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-user-plus"></i> Agregar
+                            </button>
+                            <button id="btnEdit" type="button" class="btn btn-warning btn-sm">
+                                <i class="fa fa-pencil"></i> Editar
+                            </button>
+                            <button id="btnDelete" type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+
+                        <div class="widget-body">
+                            <table id="TablaDetalle" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Nombre" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Apellido" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Edad" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Email" />
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th data-class="expand">Nombre</th>
+                                        <th>Apellido</th>
+                                        <th data-hide="phone,tablet,desktop">Edad</th>
+                                        <th data-hide="phone,tablet,desktop">Email</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div id="FormularioAlta" class="row" style="display: none" >
+            <!---->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Alta de usuario<label id="Title"></label></strong></h2>
+                    </header>
+                    
+                    <div class="widget-body" style="padding-bottom: 0px">
+                        <form id="FormEjemplo" class="smart-form">
+                            <div class="widget-body-toolbar">
+                                <button id="btnAtras" type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-arrow-left"></i> Atrás
+                                </button>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                
+                                <section class="col col-6">
+                                    <label class="control-label">Nombre</label>
+                                    <input type="text" id="nombre" onkeypress="" class="form-control" name="nombre" />
+                                </section>
+                                <section class="col col-6">
+                                    <label class="control-label">Apellido</label>
+                                    <input type="text" id="apellido" onkeypress="" class="form-control" name="apellido" />
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6">
+                                    <label class="control-label">Edad</label>
+                                    <input type="text" id="edad" onkeypress="" class="form-control" name="edad" />
+                                </section>
+                                <section class="col col-6">
+                                    <label class="control-label">Email</label>
+                                    <input type="text" id="email" onkeypress="" class="form-control" name="email" />
+                                </section>
+
+                                <section class="col col-6">
+                                    <label class="control-label">Area</label>
+                                    <select id="SelectPrueba" class="form-control" name="area">
+                                        <option value="">Sellecciona</option>
+                                    </select>
+                                </section>
+                                <section class="col col-6">
+                                    <label class="control-label">Fecha</label>
+                                    <input type="date" id="fecha" onkeypress="" class="form-control" name="fecha" />
+                                </section>
+
+                                
+                            </div>
+
+                           
+
+                        </form>
+
+
+</div>
+
+                        <div class="widget-body-toolbar">
+                            <button id="btnguardar" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-arrow"></i> Guardar
+                            </button>
+                            <button id="btnguardar2" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-arrow"></i> Guardar
+                            </button>
+                        </div>
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+            <script src="js/JSCrud.js"></script>
+        <!--<script src="js/ArmaFormulario.js"></script>-->
+
+
+</body>
+</html>

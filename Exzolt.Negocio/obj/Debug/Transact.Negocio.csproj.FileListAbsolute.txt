@@ -1,0 +1,11 @@
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Negocio.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Negocio.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Datos.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Entidades.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Framework.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Datos.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Entidades.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\bin\Debug\Transact.Framework.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\obj\Debug\Transact.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\obj\Debug\Transact.Negocio.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Negocio\obj\Debug\Transact.Negocio.pdb

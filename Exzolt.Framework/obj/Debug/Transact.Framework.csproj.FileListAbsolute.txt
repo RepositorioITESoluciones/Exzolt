@@ -1,0 +1,5 @@
+C:\Users\Mario\Documents\Ejmplo\Transact.Framework\bin\Debug\Transact.Framework.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Framework\bin\Debug\Transact.Framework.pdb
+C:\Users\Mario\Documents\Ejmplo\Transact.Framework\obj\Debug\Transact.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\Ejmplo\Transact.Framework\obj\Debug\Transact.Framework.dll
+C:\Users\Mario\Documents\Ejmplo\Transact.Framework\obj\Debug\Transact.Framework.pdb

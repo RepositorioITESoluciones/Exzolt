@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa fa-inbox fa-fw"></i> Gestión de almacenes
+        </h1>
+    </div>
+
+    <section id="widget-grid">
+        <div id="divAlmacen" class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="AdminTransaccion" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Almacenes<label id="Title"></label></strong></h2>
+                    </header>
+                    <div>
+                        <div class="widget-body-toolbar">
+                            <button id="btnPlus" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-user-plus"></i> Agregar
+                            </button>
+                            <button id="btnEdit" type="button" class="btn btn-warning btn-sm">
+                                <i class="fa fa-pencil"></i> Editar
+                            </button>
+                            <button id="btnDelete" type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+
+                        <div class="widget-body">
+                            <table id="TablaAlmacen" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" style="width:5%">
+
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Descripción" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+
+                                        </th>
+
+                                    </tr>
+                                    <tr>
+                                        <th data-class="expand">Id almacen</th>
+                                        <th data-class="expand">Descripción</th>
+                                        <th>ID Tipo de almacen</th>
+                                        <th>Tipo de almacen</th>
+                                        <th>IdSucursal</th>
+                                        <th>Sucursal</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div id="FormularioAlmacen" class="row" style="display: none">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Alta de almacenes<label id="Title"></label></strong></h2>
+                    </header>
+
+                    <div class="widget-body" style="padding-bottom: 0px">
+                        <form id="FormAlmacen" class="smart-form">
+                            <div class="widget-body-toolbar">
+                                <button id="btnAtras" type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-arrow-left"></i> Atrás
+                                </button>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6 form-group">
+                                    <label class="control-label">* Descripción</label>
+                                    <textarea style="overflow:hidden; width: 100%; resize:none;" rows="5" type="text" id="descripcion" onkeypress="" class="form-control" name="descripcion"></textarea>
+                                </section>
+                                <section class="col col-6 form-group">
+                                    <label class="control-label">* Tipo de almacén</label>
+                                    <select id="tipoAlmacen" onkeypress="" class="form-control tipoAlmacen" name="tipoAlmacen"></select>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6 form-group">
+                                    <label class="control-label">* Sucursal</label>
+                                    <select id="sucursal" onkeypress="" class="form-control" name="sucursal"></select>
+                                </section>
+                            </div>
+                            <section>
+                                <strong>
+                                    <i>* Campos obligatorios</i>
+                                </strong>
+                            </section>
+                        </form>
+                    </div>
+                    <div class="widget-body-toolbar">
+
+                        <button id="btnguardar" type="button" class="btn btn-primary btn-sm">
+                            <i class="fa fa-arrow"></i> Guardar
+                        </button>
+                        <br>
+                        <button id="btnguardar2" type="button" class="btn btn-primary btn-sm">
+                            <i class="fa fa-arrow"></i> Guardar
+                        </button>
+                        <br>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="js/catalogos/Almacenes/JSCrudAlmacen.js"></script>
+
+</body>
+</html>

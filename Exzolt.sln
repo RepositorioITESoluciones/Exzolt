@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exzolt.Datos", "Exzolt.Datos\Exzolt.Datos.csproj", "{88376554-5918-49D8-8D53-F1423F0E5D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exzolt.Framework", "Exzolt.Framework\Exzolt.Framework.csproj", "{9F326943-5354-4F2A-84C8-349EF2D02E05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exzolt.Entidades", "Exzolt.Entidades\Exzolt.Entidades.csproj", "{9AF0C326-CCCB-47D2-AC87-457E9A0629A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exzolt.Negocio", "Exzolt.Negocio\Exzolt.Negocio.csproj", "{8FC24CC0-016E-4948-8902-F4D8A3BDA341}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WBExzolt", "WBExzolt\", "{C579FD58-6CC4-4DB9-8AC9-A9EA319AC7B7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{88376554-5918-49d8-8d53-f1423f0e5d3f}|Exzolt.Datos.dll;{9af0c326-cccb-47d2-ac87-457e9a0629a1}|Exzolt.Entidades.dll;{9f326943-5354-4f2a-84c8-349ef2d02e05}|Exzolt.Framework.dll;{8fc24cc0-016e-4948-8902-f4d8a3bda341}|Exzolt.Negocio.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_14593"
+		Debug.AspNetCompiler.PhysicalPath = "WBExzolt\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14593\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_14593"
+		Release.AspNetCompiler.PhysicalPath = "WBExzolt\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14593\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "14593"
+		SlnRelativePath = "WBExzolt\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88376554-5918-49D8-8D53-F1423F0E5D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88376554-5918-49D8-8D53-F1423F0E5D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88376554-5918-49D8-8D53-F1423F0E5D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88376554-5918-49D8-8D53-F1423F0E5D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F326943-5354-4F2A-84C8-349EF2D02E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F326943-5354-4F2A-84C8-349EF2D02E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F326943-5354-4F2A-84C8-349EF2D02E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F326943-5354-4F2A-84C8-349EF2D02E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF0C326-CCCB-47D2-AC87-457E9A0629A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF0C326-CCCB-47D2-AC87-457E9A0629A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF0C326-CCCB-47D2-AC87-457E9A0629A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF0C326-CCCB-47D2-AC87-457E9A0629A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC24CC0-016E-4948-8902-F4D8A3BDA341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC24CC0-016E-4948-8902-F4D8A3BDA341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC24CC0-016E-4948-8902-F4D8A3BDA341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC24CC0-016E-4948-8902-F4D8A3BDA341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C579FD58-6CC4-4DB9-8AC9-A9EA319AC7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C579FD58-6CC4-4DB9-8AC9-A9EA319AC7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C579FD58-6CC4-4DB9-8AC9-A9EA319AC7B7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C579FD58-6CC4-4DB9-8AC9-A9EA319AC7B7}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {A436C8C6-3C9C-4F3E-ACB1-9F1648C8085D}
+	EndGlobalSection
+EndGlobal

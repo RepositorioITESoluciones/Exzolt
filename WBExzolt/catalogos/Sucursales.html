@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sucursales</title>
+    <script src="js/catalogos/Sucursales.js"></script>
+</head>
+<body>
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa fa-inbox fa-fw"></i> Sucursales
+        </h1>
+    </div>
+
+    <section id="widget-grid">
+        <div id="divTiposTransaccion" class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="AdminTransaccion" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Sucursales<label id="Title"></label></strong></h2>
+                    </header>
+                    <div>
+                        <div class="widget-body-toolbar">
+                            <button id="btnPlus" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-user-plus"></i> Agregar
+                            </button>
+                            <button id="btnEdit" type="button" class="btn btn-warning btn-sm">
+                                <i class="fa fa-pencil"></i> Editar
+                            </button>
+                            <button id="btnDelete" type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+
+                        <div class="widget-body">
+                            <table id="detalleSucursal" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="IdSucursal" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Nombre" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Empresa" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="IdEmpresa" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="IdDatosFiscales" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="RFC" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Razón Social" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Calle" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Número Exterior" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Número Interior" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="IdEstado" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="CP" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Tipo Persona" />
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th data-hide="phone,tablet">IdSucursal</th>
+                                        <th data-class="expand">Nombre</th>
+                                        <th data-hide="phone,tablet">Empresa</th>
+                                        <th data-hide="phone,tablet">IdEmpresa</th>
+                                        <th data-hide="phone,tablet">IdDatosFiscales</th>
+                                        <th data-hide="phone,tablet,desktop">RFC</th>
+                                        <th data-hide="phone,tablet">Razón Social</th>
+                                        <th data-hide="phone,tablet">Calle</th>
+                                        <th data-hide="phone,tablet">NumExt</th>
+                                        <th data-hide="phone,tablet">NumInt</th>
+                                        <th data-hide="phone,tablet">IdEstado</th>
+                                        <th data-hide="phone,tablet">CP</th>
+                                        <th data-hide="phone,tablet">Tipo Persona</th>
+
+
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div id="FormularioAlta" class="row" style="display: none">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Alta Sucursal<label id="Title"></label></strong></h2>
+                    </header>
+
+                    <div class="widget-body" style="padding-bottom: 0px">
+
+                        <form id="FormSucursal" class="smart-form">
+                            <div class="widget-body-toolbar">
+                                <button id="btnAtras" type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-arrow-left"></i> Atrás
+                                </button>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Nombre</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ondrop="return false" id="Nombre" onkeypress="return validarCaracteresN(event)" class="form-control" name="nombre" />
+                                    </div>
+                                </section>
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Empresa</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <select type="text" id="ComboEmpresa" onkeypress="" class="form-control" name="idEmpresa"></select>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Tipo de Persona</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <select type="text" id="ComboTPer" onkeypress="" onchange="validaTamanio()" class="form-control" name="ComboTPer"></select>
+                                        <input type="hidden" id="Tamanio" name="Tamanio" />
+                                    </div>
+                                </section>
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label">RFC</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ondrop="return false" id="RFC" onkeypress="return validarCaracteresN(event)" class="form-control" name="RFC" />
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Razón Social</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ondrop="return false" id="RS" onkeypress="return validarCaracteresN(event)" class="form-control" name="RS" />
+                                    </div>
+                                </section>
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Calle</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ondrop="return false" id="Calle" onkeypress="return validarCaracteresN(event)" class="form-control" name="Calle" />
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Número Ext.</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ondrop="return false" id="NumExt" onkeypress="return validarCaracteresN(event)" class="form-control" name="NumExt" />
+                                    </div>
+                                </section>
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label">Número Int.</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" ondrop="return false" id="NumInt" onkeypress="return validarCaracteresN(event)" class="form-control" name="NumInt" />
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6 form-group estado">
+                                    <div class="required">
+                                        <label class="control-label"> Estado</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <select type="text" id="ComboEstado" onchange="actualizaCP()" class="form-control" name="ComboEstado"></select>
+                                    </div>
+                                </section>
+
+                                <section class="col col-6">
+                                    <div class="required">
+                                        <label class="control-label"> Código Postal</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <select type="text" id="ComboCP" onkeypress="" class="form-control" name="ComboCP">
+                                            <option value="0">Seleccione</option>
+                                        </select>
+                                    </div>
+                                </section>
+                            </div>
+                        </form>
+
+                        <div id="botones" class="widget-body-toolbar">
+                            <button id="btnguardar" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-arrow"></i> Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
+

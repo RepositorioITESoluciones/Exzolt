@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+
+</head>
+<body>
+
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa fa-inbox fa-fw"></i> Personal y Usuarios
+        </h1>
+    </div>
+
+
+    <section id="widget-grid">
+        <div id="divTiposTransaccion" class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="AdminTransaccion" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Detalle de Personal y Usuarios<label id="Title"></label></strong></h2>
+                    </header>
+                    <div>
+                        <!--<div class="jarviswidget-editbox">
+                            <input class="form-control" type="text">
+                            <span class="note"><i class="fa fa-check text-success"></i> Puede cambiar el titulo de este control</span>
+                        </div>-->
+                        <div class="widget-body-toolbar">
+                            <button id="btnPlus" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-user-plus"></i> Agregar
+                            </button>
+                            <button id="btnEdit" type="button" class="btn btn-warning btn-sm">
+                                <i class="fa fa-pencil"></i> Editar
+                            </button>
+                            <button id="btnDelete" type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+
+                        <div class="widget-body">
+                            <table id="TablaDetalle" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="nombre" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="rfc" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="puesto" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="email" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="acceso" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="nombreRol" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="nombreUsuario" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="privilegios" />
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th data-class="expand">nombre</th>
+                                        <th>rfc</th>
+                                        <th data-hide="phone,tablet,desktop">puesto</th>
+                                        <th data-hide="phone,tablet,desktop">email</th>
+                                        <th data-hide="phone,tablet,desktop">acceso</th>
+                                        <th data-hide="phone,tablet,desktop">nombreRol</th>
+                                        <th data-hide="phone,tablet,desktop">nombreUsuario</th>
+                                        <th data-hide="phone,tablet,desktop">privilegios</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div id="FormularioAlta" class="row" style="display: none">
+            <!---->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Alta<label id="Title"></label></strong></h2>
+                    </header>
+
+                    <div class="widget-body" style="padding-bottom: 0px">
+                        <form id="FormAltaPersonal" class="smart-form">
+                            <div class="widget-body-toolbar">
+                                <button id="btnAtras" type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-arrow-left"></i> Atrás
+                                </button>
+                            </div>
+
+                            <div id="radioPersonal">
+                                <input type="radio" name="personaUsuario" value="personal" checked="checked" onclick="validaAlta()" /> <b>Alta de Personal y Usuario</b><br />
+                                <input type="radio" name="personaUsuario" value="usuario" onclick="validaAlta()" /> <b> Alta de Usuario </b><br />
+                            </div>
+
+                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="rowTransacciones">
+                                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false"
+                                     data-widget-custombutton="false">
+                                    <header id="altaPersS">
+                                        <span class="widget-icon"><i class="fa fa-table"></i></span><h2>Alta de Personal</h2>
+                                    </header>
+                                    <br />
+                                
+                                    <div class="row" style="margin-top: 10px">
+                                        <section id="nombreS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label negritas">Nombre</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <input type="text" id="nombre" onkeypress="" class="form-control" name="nombre" />
+                                            </div>
+                                        </section>
+
+                                        <section id="apPaternoS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Apellido Paterno</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <input type="text" id="apPaterno" onkeypress="" class="form-control" name="apPaterno" />
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="row" style="margin-top: 10px">
+                                        <section id="apMaternoS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Apellido Materno</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <input type="text" id="apMaterno" onkeypress="" class="form-control" name="apMaterno" />
+                                            </div>
+                                        </section>
+
+                                        <section id="RFCS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">RFC</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <input type="text" id="rfc" onkeypress="" class="form-control" name="rfc" />
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="row" style="margin-top: 10px">
+                                        <section id="estadoS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Estado</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <select type="text" id="estadoC" onkeypress="" onchange="actualizaCP()" class="form-control" name="estadoC"></select>
+                                            </div>
+                                        </section>
+
+                                        <section id="CPS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">C.P.</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <select type="text" id="cpC" onkeypress="" class="form-control" name="cpC">
+                                                    <option value="0">Seleccione</option>
+                                                </select>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="row" style="margin-top: 10px">
+                                        <section id="puestoS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Puesto</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <select type="text" id="idPuesto" onkeypress="" class="form-control" name="idPuesto"></select>
+                                            </div>
+                                        </section>
+
+                                        <section id="emailS" class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Email</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <input type="text" id="email" onkeypress="" class="form-control" name="email" />
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="row" style="margin-top: 10px">
+                                        <section id="accesoS" class="col col-6">
+                                            <div class="col col-6 form-group">
+                                                <input type="checkbox" id="acceso" onkeypress="" name="acceso" />
+                                                <label class="control-label">Acceso Sistema</label>
+                                            </div>
+                                        </section>
+                                    <!--</div>-->
+                                    </div>
+                            </article>
+
+                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="rowTransacciones">
+                                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false"
+                                     data-widget-custombutton="false">
+                                    <header>
+                                        <span class="widget-icon"><i class="fa fa-table"></i></span><h2>Alta de Usuario</h2>
+                                    </header>
+                                    <br />
+
+                                    <section id="personaS" class="col col-6">
+                                        <div class="col col-4 required">
+                                            <label class="control-label">Seleccione la Persona</label>
+                                        </div>
+                                        <div class="col col-6 form-group">
+                                            <select type="text" id="personaC" onkeypress="" class="form-control" name="personaC"></select>
+                                        </div>
+                                    </section>
+                          
+                                    <div class="row" style="margin-top: 10px">
+                                        <section class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Rol</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <select type="text" id="idRol" onkeypress="" class="form-control" name="idRol"></select>
+                                            </div>
+                                        </section>
+
+                                        <section class="col col-6">
+                                            <div class="col col-4 required">
+                                                <label class="control-label">Usuario</label>
+                                            </div>
+                                            <div class="col col-6 form-group">
+                                                <input type="text" id="usuario" onkeypress="" class="form-control" name="usuario" />
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <section class="col col-6">
+                                        <div class="col col-4 required">
+                                            <label class="control-label">Contraseña</label>
+                                        </div>
+                                        <div class="col col-6 form-group">
+                                            <input type="password" id="pwd" onkeypress="" class="form-control" name="pwd" />
+                                        </div>
+                                    </section>
+
+                                    <section class="col col-6">
+                                        <div class="col col-4 required form-group">
+                                            <label class="control-label">Privilegios</label></br>
+                                            <div id="privile"></div>
+                                            <div id="privileEdit"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" id="privi" onkeypress="" class="form-control" name="privi" />
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </article>
+                        </form>
+
+
+
+                        <div class="widget-body-toolbar">
+                            <button id="btnguardar" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-arrow"></i> Guardar
+                            </button>
+                        </div>
+
+                    </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="js/catalogos/adminPersonalUsuario.js"></script>
+
+
+</body>
+</html>

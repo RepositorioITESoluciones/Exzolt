@@ -1,0 +1,9 @@
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\obj\Debug\Exzolt.Datos.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Datos.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Datos.pdb
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\obj\Debug\Exzolt.Datos.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\obj\Debug\Exzolt.Datos.pdb
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Entidades.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Entidades.pdb
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Framework.pdb

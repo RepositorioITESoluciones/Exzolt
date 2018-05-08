@@ -1,0 +1,38 @@
+﻿<style>
+    .percent {
+        top: 45% !important;
+    }
+
+    #indicadores {
+        font-size: 14px;
+    }
+</style>
+
+<article class="">
+    <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-colorbutton="false">
+        <header>
+            <span class="widget-icon"> <i class="fa fa-bar-chart-o"></i> </span>
+            <h2>Reporte de eficiencia a nivel de máquina por periodo.</h2>
+        </header>
+        <div class="widget-body" style="text-align: center">
+            <section class="col-12">
+                <!--<div>
+                    <p id="indicadores">Indicadores graficos eficiencia a nivel de máquina por periodo</p>
+                </div>-->
+            </section>
+            <section class="col-xs-12 col-md-6"><br />
+                <select class="form-control" id="departamentos"></select><br />
+                <select class="form-control" id="maquinas"></select><br />
+                <input name="daterange" class="form-control" id="daterange"/>
+            </section> <br>
+            <section class="col-xs-12 col-md-6">
+                <ul class="list-inline grafica ">
+                    <li id="contenedorGraficaPorMaquina">
+                    </li>
+                </ul>
+            </section>
+            
+        </div>
+        </div>
+</article>
+<script src="js/catalogos/Graficas/JSReporteEficienciaMaquina.js"></script>

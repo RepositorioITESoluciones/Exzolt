@@ -1,0 +1,238 @@
+﻿/*.divFormula {
+    margin-top: 15px;
+    border: 1px solid #cfcfcf;
+    width: 80%;
+    height: 50px;
+    margin-left: 100px;
+}*/
+
+form .error {
+    color: #b94a48;
+}
+
+/*Sobrescritura de la clase FUELUX para acomodar
+    los componentes del SmartWizard 
+*/
+table.dataTable tbody tr.selected {
+    color: white;
+    background-color: rgba(96, 134, 250, 0.76);
+}
+.fuelux .wizard ul li {
+    position: relative;
+    float: inherit;
+    padding: 0 20px 0 30px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 36px;
+    color: #999;
+    cursor: default;
+    background: #fff;
+    margin: 5px 0;
+    height: 35px;
+}
+
+
+.fuelux .wizard ul li:first-child {
+    padding-left: 30px;
+    border-radius: 4px 0 0 4px;
+}
+
+.fuelux .wizard ul {
+    width: auto; 
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+    list-style: none outside none;
+
+}
+
+.fuelux .wizard ul li:first-child {
+    border-radius: inherit  ;
+}
+
+ 
+.fuelux .wizard ul li.mouseover {
+    color: #fff;
+    background: #3a87ad;
+}
+
+
+
+
+
+/*Sobrescritura de la clase NESTABLE para acomodar
+    los componentes de JQuery-Nestable 
+*/
+
+/*.nestable1{
+    margin-left: 80px;
+}
+
+.nestable2{
+    margin-left: 100px;
+}*/
+
+.dd-handle:hover, .dd-handle:hover+.dd-list .dd-handle {
+    background: #3a87ad!important;
+    border: 1px solid #3a87ad;
+    color: #fff!important;
+}
+
+.well ul li.active {
+    color: #fff!important;
+    background: #3a87ad!important;
+}
+
+.well{
+
+}
+
+.list-group-item-A{
+    border: 1px solid #ddd;
+}
+
+.list-group-item-B{
+    border: 1px solid #ddd;
+}
+
+
+.dd-empty {
+     border: 1px dashed #bbb;
+     min-height: 35px;
+     background-color:initial;
+     background-image: initial; 
+     background-image: initial;
+     background-image:  initial;
+     background-size: initial; 
+     background-position: initial;
+}
+
+
+.ListasAcciones ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10px;
+}
+
+.ListasAcciones li {
+            margin: 5px;
+            padding: 5px;
+            width: 150px;
+}
+
+#sortable li{
+    margin: 3px;
+}
+
+.f{
+    color:cornflowerblue;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    /*border:0px;*/
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #BDBDBD;;
+}
+
+
+#sortable {
+    width: 80%;
+    border: 1px solid #bbb;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+#sortable2 {
+    width: 80%;
+    border: 1px solid #bbb;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+
+/*Clases para los SELECTABLES*/
+  #feedback { font-size: 1.4em; }
+  #cabecera_rn .ui-selecting { color: #fff!important; background: #3a87ad!important; }
+  #cabecera_rn .ui-selected { background: #F39814; color: white; }
+  #cabecera_rn { list-style-type: none; margin: 0; padding: 5px; width: 100%; }
+  #cabecera_rn li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 30px; }
+
+  #detalle_rn .ui-selecting { color: #fff!important; background: #3a87ad!important; }
+  #detalle_rn .ui-selected { background: #F39814; color: white; }
+  #detalle_rn { list-style-type: none; margin: 0; padding: 5px; width: 100%; }
+  #detalle_rn li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 30px; }
+
+
+
+  /*Clase param inputs Wizard nivel 5*/
+.inputConfigCampo {
+    border: hidden;
+    padding-bottom: 5px;
+}
+
+.inputConfigCampo::-webkit-input-placeholder {
+    color: cadetblue;
+    font-weight :bold;
+
+}
+
+.ui-controlgroup-vertical {
+      width: 150px;
+    }
+    .ui-controlgroup.ui-controlgroup-vertical > button.ui-button,
+    .ui-controlgroup.ui-controlgroup-vertical > .ui-controlgroup-label {
+      text-align: center;
+    }
+    #car-type-button {
+      width: 120px;
+    }
+    .ui-controlgroup-horizontal .ui-spinner-input {
+      width: 20px;
+    }
+
+.field{
+		border: 1px solid #ddd !important;
+		margin: 0;
+		//xmin-width: 0;
+		padding: 10px;       
+		position: relative;
+		border-radius:4px;
+		background-color:#f5f5f5;
+		padding-left:10px!important;
+}
+
+#RN_CamposConfiguracion{
+    width: 90%;
+}
+
+/*#RN_CamposConfiguracion td{
+    text-align:center;
+}*/
+
+div.tableCenter{
+    text-align: -webkit-center;
+}
+
+
+.fuelux .wizard>ul.steps li, .fuelux .wizard>.steps-container>ul.steps li {
+    cursor: default;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #F44336;
+    border-color: #f32c1e;
+}
+
+.btn-warning {
+    background: #FF9800;
+    border-color: #cc7a00 !important;
+}
+
+.btn-primary {
+    background: #2196F3;
+    border-color: #0c7cd5 !important;
+}

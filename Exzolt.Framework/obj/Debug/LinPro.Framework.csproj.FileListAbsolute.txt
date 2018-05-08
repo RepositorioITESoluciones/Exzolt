@@ -1,0 +1,26 @@
+C:\Users\Mario\Documents\LineasDeProducción\LinPro.Framework\bin\Debug\LinPro.Framework.dll
+C:\Users\Mario\Documents\LineasDeProducción\LinPro.Framework\bin\Debug\LinPro.Framework.pdb
+C:\Users\Mario\Documents\LineasDeProducción\LinPro.Framework\obj\Debug\LinPro.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\LineasDeProducción\LinPro.Framework\obj\Debug\LinPro.Framework.dll
+C:\Users\Mario\Documents\LineasDeProducción\LinPro.Framework\obj\Debug\LinPro.Framework.pdb
+C:\Users\DES-ITE-069\Documents\Lineas de Produccion\LineasProduccionProd\LineasDeProduccion\LinPro.Framework\bin\Debug\LinPro.Framework.dll
+C:\Users\DES-ITE-069\Documents\Lineas de Produccion\LineasProduccionProd\LineasDeProduccion\LinPro.Framework\bin\Debug\LinPro.Framework.pdb
+C:\Users\DES-ITE-069\Documents\Lineas de Produccion\LineasProduccionProd\LineasDeProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.csprojResolveAssemblyReference.cache
+C:\Users\DES-ITE-069\Documents\Lineas de Produccion\LineasProduccionProd\LineasDeProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.dll
+C:\Users\DES-ITE-069\Documents\Lineas de Produccion\LineasProduccionProd\LineasDeProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.pdb
+C:\Users\Mario\Pictures\LineasDeProduccion\LinPro.Framework\bin\Debug\LinPro.Framework.dll
+C:\Users\Mario\Pictures\LineasDeProduccion\LinPro.Framework\bin\Debug\LinPro.Framework.pdb
+C:\Users\Mario\Pictures\LineasDeProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Pictures\LineasDeProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.dll
+C:\Users\Mario\Pictures\LineasDeProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.pdb
+C:\Users\Ruben\Documents\Visual Studio 2017\LinProdIteracion4\LinPro.Framework\bin\Debug\LinPro.Framework.dll
+C:\Users\Ruben\Documents\Visual Studio 2017\LinProdIteracion4\LinPro.Framework\bin\Debug\LinPro.Framework.pdb
+C:\Users\Ruben\Documents\Visual Studio 2017\LinProdIteracion4\LinPro.Framework\obj\Debug\LinPro.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Ruben\Documents\Visual Studio 2017\LinProdIteracion4\LinPro.Framework\obj\Debug\LinPro.Framework.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Documents\Visual Studio 2017\LinProdIteracion4\LinPro.Framework\obj\Debug\LinPro.Framework.dll
+C:\Users\Ruben\Documents\Visual Studio 2017\LinProdIteracion4\LinPro.Framework\obj\Debug\LinPro.Framework.pdb
+C:\inetpub\wwwroot\LineaProduccion\LinPro.Framework\bin\Debug\LinPro.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\LinPro.Framework\bin\Debug\LinPro.Framework.pdb
+C:\inetpub\wwwroot\LineaProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LineaProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.dll
+C:\inetpub\wwwroot\LineaProduccion\LinPro.Framework\obj\Debug\LinPro.Framework.pdb

@@ -1,0 +1,5 @@
+C:\Users\Mario\Documents\Ejmplo\Energeticos.Framework\bin\Debug\Energeticos.Framework.dll
+C:\Users\Mario\Documents\Ejmplo\Energeticos.Framework\bin\Debug\Energeticos.Framework.pdb
+C:\Users\Mario\Documents\Ejmplo\Energeticos.Framework\obj\Debug\Energeticos.Framework.dll
+C:\Users\Mario\Documents\Ejmplo\Energeticos.Framework\obj\Debug\Energeticos.Framework.pdb
+C:\Users\Mario\Documents\Ejmplo\Energeticos.Framework\obj\Debug\Energeticos.Framework.csprojResolveAssemblyReference.cache

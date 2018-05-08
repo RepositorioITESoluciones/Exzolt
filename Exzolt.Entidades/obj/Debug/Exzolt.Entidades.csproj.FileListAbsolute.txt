@@ -1,0 +1,5 @@
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Entidades\bin\Debug\Exzolt.Entidades.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Entidades\bin\Debug\Exzolt.Entidades.pdb
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.dll
+C:\inetpub\wwwroot\LineaProduccion\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.pdb

@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Maquinas</title>
+    <script src="js/catalogos/Maquinas.js"></script>
+</head>
+<body>
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+        <h1 class="page-title txt-color-blueDark">
+            <i class="fa fa-inbox fa-fw"></i> Maquinas
+        </h1>
+    </div>
+
+    <section id="widget-grid">
+        <div id="divTiposTransaccion" class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="AdminTransaccion" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Maquinas<label id="Title"></label></strong></h2>
+                    </header>
+                    <div>
+                        <div class="widget-body-toolbar">
+                            <button id="btnPlus" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-user-plus"></i> Agregar
+                            </button>
+                            <button id="btnEdit" type="button" class="btn btn-warning btn-sm">
+                                <i class="fa fa-pencil"></i> Editar
+                            </button>
+                            <button id="btnDelete" type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+
+                        <div class="widget-body">
+                            <table id="detalleMaquina" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="IdMaquina" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Descripción" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Año" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Marca" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="IdMarca" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Número De Serie" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="idNave" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Nave" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="idPlaca" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Placa" />
+                                        </th>
+                                        <th class="hasinput" style="width:5%">
+                                            <input type="text" class="form-control" placeholder="Estatus" />
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th data-class="expand">IdMaquina</th>
+                                        <th data-class="expand">Descripción</th>
+                                        <th data-class="expand">Año</th>
+                                        <th data-class="expand">Marca</th>
+                                        <th data-class="expand">IdMarca</th>
+                                        <th data-class="expand">Número de Serie</th>
+                                        <th data-class="expand">idNave</th>
+                                        <th data-class="expand">Nave</th>
+                                        <th data-class="expand">idPlaca</th>
+                                        <th data-class="expand">Placa</th>
+                                        <th data-class="expand">Estatus</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div id="FormularioAlta" class="row" style="display: none">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header>
+                        <h2><i class="icon-prepend  icon-edit"></i><strong>Alta Maquina<label id="Title"></label></strong></h2>
+                    </header>
+
+                    <div class="widget-body" style="padding-bottom: 0px">
+
+                        <form id="FormMaquina" class="smart-form">
+                            <div class="widget-body-toolbar">
+                                <button id="btnAtras" type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-arrow-left"></i> Atrás
+                                </button>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+
+                                <section class="col col-6">
+                                    <div class=" required">
+                                        <label class="control-label"> Descripcion</label>
+                                    </div>
+                                    <div class=" form-group">
+                                        <input type="text" ondrop="return false" id="Descripcion" onkeypress="return validarCaracteresN(event)" class="form-control" name="Descripcion" />
+                                    </div>
+                                </section>
+                                <section class="col col-6">
+                                    <div class=" required">
+                                        <label class="control-label"> Marca</label>
+                                    </div>
+                                    <div class=" form-group">
+                                        <select type="text" id="CmbMarca" onkeypress="" class="form-control" name="CmbMarca"></select>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6">
+                                    <div class=" required">
+                                        <label class="control-label"> Número de Serie</label>
+                                    </div>
+                                    <div class=" form-group">
+                                        <input type="text" ondrop="return false" id="Nserie" onkeypress="return validarCaracteresN(event)" class="form-control" name="Nserie" />
+                                    </div>
+                                </section>
+                                <section class="col col-6">
+                                    <div class=" required">
+                                        <label class="control-label"> Nave</label>
+                                    </div>
+                                    <div class=" form-group">
+                                        <select type="text" id="CmbNave" onkeypress="" class="form-control" name="CmbNave"></select>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-6">
+                                    <div class=" required">
+                                        <label class="control-label"> Placa</label>
+                                    </div>
+                                    <div class=" form-group">
+                                        <select type="text" id="ComboPlaca" onkeypress="" class="form-control" name="ComboPlaca"></select>
+                                    </div>
+                                </section>
+                                    <section class="col col-6 form-group">
+                                    <label class="control-label required negritas">Año</label>
+                                    <div class='input-group input-append date'>
+                                        <input type="text" id="Año" class="form-control" name="Año" placeholder="Selecciona Año" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </section>
+
+
+
+                            </div>
+                        </form>
+
+                        <div id="botones" class="widget-body-toolbar">
+                            <button id="btnguardar" type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-arrow"></i> Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

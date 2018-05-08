@@ -1,0 +1,232 @@
+<style>
+html {
+    background: none !important;
+}
+
+/* FONDO */
+body {
+    background: url('img/welcome.jpeg') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+.welcome {
+    border: 1px solid transparent;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, .6)
+
+}
+    
+.logo-proyect {
+    margin-top: 30px;
+    color: #92939a;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.image {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+hr {
+    width: 60%;
+}
+
+.bienvenido {
+    color: #FF9001;
+    font-weight: bold;
+}
+
+#extr-page #main {
+    background: none !important; 
+    margin: 0;
+}
+
+.page-footer {
+    border-top: none !important;
+}
+
+.text-white {
+    color: #ddd;
+}
+</style>
+
+
+
+<div class="col-lg-12 col-sm-4 col-md-4 col-lg-4"></div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="welcome">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center welcome">
+                <h1 class="logo-proyect">Transact</h1>
+                <br />
+                <p class="lead">
+
+                </p>
+                <br />
+                <img class="img-responsive image" src="img/LogoITE2.png" alt="logoIte" width="140" />
+
+
+                <div id="chartdiv"></div>	
+         
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- end row -->
+<!--<script>
+           var chartData = generateChartData();
+           var chart = AmCharts.makeChart("chartdiv", {
+               "type": "serial",
+               "theme": "light",
+               "marginRight": 80,
+               "autoMarginOffset": 20,
+               "marginTop": 7,
+               "dataProvider": chartData,
+               "valueAxes": [{
+                   "axisAlpha": 0.2,
+                   "dashLength": 1,
+                   "position": "left"
+               }],
+               "mouseWheelZoomEnabled": true,
+               "graphs": [{
+                   "id": "g1",
+                   "balloonText": "[[value]]",
+                   "bullet": "round",
+                   "bulletBorderAlpha": 1,
+                   "bulletColor": "#FFFFFF",
+                   "hideBulletsCount": 50,
+                   "title": "red line",
+                   "valueField": "visits",
+                   "useLineColorForBulletBorder": true,
+                   "balloon": {
+                       "drop": true
+                   }
+               }],
+               "chartScrollbar": {
+                   "autoGridCount": true,
+                   "graph": "g1",
+                   "scrollbarHeight": 40
+               },
+               "chartCursor": {
+                   "limitToGraph": "g1"
+               },
+               "categoryField": "date",
+               "categoryAxis": {
+                   "parseDates": true,
+                   "axisColor": "#DADADA",
+                   "dashLength": 1,
+                   "minorGridEnabled": true
+               },
+               "export": {
+                   "enabled": true
+               }
+           });
+
+           chart.addListener("rendered", zoomChart);
+           zoomChart();
+
+           // this method is called when chart is first inited as we listen for "rendered" event
+           function zoomChart() {
+               // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+               chart.zoomToIndexes(chartData.length - 40, chartData.length - 1);
+           }
+
+
+           // generate some random data, quite different range
+
+           // generate some random data, quite different range
+           function generateChartData() {
+               var chartData = [];
+               var firstDate = new Date();
+               firstDate.setDate(firstDate.getDate() - 10);
+               var visits = 1200;
+               for (var i = 0; i < 1000; i++) {
+                   // we create date objects here. In your data, you can have date strings
+                   // and then set format of your dates using chart.dataDateFormat property,
+                   // however when possible, use date objects, as this will speed up chart rendering.
+                   var newDate = new Date(firstDate);
+                   newDate.setDate(newDate.getDate() + i);
+
+                   visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+                   chartData.push({
+                       date: newDate,
+                       visits: visits
+                   });
+               }
+               return chartData;
+           }
+</script>-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#StatusTran").empty();
+        $("#catalogotransc").empty();
+        $("#menutipo").hide();
+        $("#menutransact").hide();
+
+        $("#welcome").hide();
+        $("#welcome").fadeIn(2000);
+    });
+        
+        $(function () {
+            console.log("Inicio");
+           
+            loadScript("js/bootstrap/bootstrap.min.js");
+
+            
+
+            var nombreC = getCookie("Nombre");
+            var apellidoPC = getCookie("ApellidoP");
+            var apellidoMC = getCookie("ApellidoM");
+            
+                if (nombreC!="") {
+                    $('.lead').append("<h3 class='text-center bienvenido'>Bienvenido</h3>");
+
+                    $('.lead').append("<h5 class='text-center text-white'><b>" + nombreC + " " + apellidoMC + " " + apellidoPC + "</b></h5>");
+
+                } else {
+                   
+                }
+                
+            
+        });
+
+
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+
+</script>
+
+<script src="js/amcharts.js"></script>
+<script src="js/serial.js"></script>
+<script src="js/export.min.js"></script>
+<link rel="stylesheet" href="js/export.css" type="text/css" media="all" />
+
+<script src="js/light.js"></script>
