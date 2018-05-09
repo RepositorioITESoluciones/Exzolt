@@ -7,3 +7,12 @@ C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Entidades.dll
 C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Entidades.pdb
 C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Framework.dll
 C:\inetpub\wwwroot\LineaProduccion\Exzolt.Datos\bin\Debug\Exzolt.Framework.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\obj\Debug\Exzolt.Datos.csprojResolveAssemblyReference.cache
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\obj\Debug\Exzolt.Datos.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\obj\Debug\Exzolt.Datos.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\bin\Debug\Exzolt.Datos.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\bin\Debug\Exzolt.Datos.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\bin\Debug\Exzolt.Entidades.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\bin\Debug\Exzolt.Framework.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\bin\Debug\Exzolt.Entidades.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Datos\bin\Debug\Exzolt.Framework.pdb

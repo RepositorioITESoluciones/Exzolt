@@ -9,3 +9,14 @@ C:\inetpub\wwwroot\LineaProduccion\Exzolt.Negocio\obj\Debug\Exzolt.Negocio.dll
 C:\inetpub\wwwroot\LineaProduccion\Exzolt.Negocio\obj\Debug\Exzolt.Negocio.pdb
 C:\inetpub\wwwroot\LineaProduccion\Exzolt.Negocio\bin\Debug\Exzolt.Framework.dll
 C:\inetpub\wwwroot\LineaProduccion\Exzolt.Negocio\bin\Debug\Exzolt.Framework.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\obj\Debug\Exzolt.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\obj\Debug\Exzolt.Negocio.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\obj\Debug\Exzolt.Negocio.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Negocio.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Negocio.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Datos.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Entidades.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Framework.dll
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Datos.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Entidades.pdb
+C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Negocio\bin\Debug\Exzolt.Framework.pdb

@@ -1,34 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Exzolt.Datos;
 using Exzolt.Entidades;
+using System.Collections.Generic;
 
 namespace Exzolt.Negocio {
     public class NegocioUsuario {
 
         DatosUsuario DatosUsr = new DatosUsuario();
 
-        public Usuario ObtieneUser(Usuario usuario) {
+        /*
+         * @param usuario 
+         * Valida Sesión
+         */
+        public Usuario login(Usuario usuario) {
             Usuario usr;
             usr = DatosUsr.login(usuario);
             return usr;
         }
-        public bool insertarUser(Usuario usuario) {
-            bool respuesta = false;
-            if (usuario.contraseña == usuario.contraseñaVali) {
-                try {
-                    DatosUsr.insertarUserDatos(usuario);
-                    respuesta = true;
-                } catch (Exception ex) {
-                    Console.WriteLine(ex);
-                }
-            } else {
-               
+
+        /*
+         * @param usuario 
+         * Inserta Usuario
+         */
+        public int insertaUsuario(Usuario usuario) {
+            int respuesta = 0;
+            try {
+                respuesta = DatosUsr.insertaUsuario(usuario);
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
             }
             return respuesta;
+        }
+
+        /*
+         * Valida Sesión
+         * Consulta Tablero Principal
+         */
+        public List<Usuario> tableroPuntaje() {
+            List<Usuario> listUsuario;
+            try {
+                listUsuario = DatosUsr.tableroPuntaje();
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return listUsuario;
         }
 
     }
