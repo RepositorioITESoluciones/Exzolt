@@ -1,16 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Web.Services;
-using System.Data;
-using Exzolt.Negocio;   
+using Exzolt.Negocio;
 using Exzolt.Entidades;
+using System.Collections.Generic;
 
-
-
-/// <summary>
-/// Summary description for MyServiceClass
-/// </summary>
-/// 
 [System.Web.Script.Services.ScriptService]
 
 public class WSExzolt : System.Web.Services.WebService
@@ -18,41 +11,41 @@ public class WSExzolt : System.Web.Services.WebService
     public WSExzolt() { }
     readonly NegocioUsuario NegocioUsr = new NegocioUsuario();
 
+    /*
+     * @param id 
+     * Valida Sesión
+     */
     [WebMethod]
-    public String login(String nombre, string nombreUsuario, string contrasena) {
+    public String login(int id) {
+        String res;
         Usuario usr = new Usuario();
-        usr.nombre = nombre;
-        usr.nombreUsuario = nombreUsuario;
-        usr.contraseña = contrasena;
-        usr = NegocioUsr.ObtieneUser(usr);
-        if (usr.nombre != null) {
-            Console.WriteLine("Entra");
-            return "OK";
-        } else {
-            Console.WriteLine("No entra");
-            return "NO";
-        }
+        usr.id = id;
+        usr = NegocioUsr.login(usr);
+        res = (usr != null) ? "Ok" : "No";
+        return res;
     }
 
+    /*
+     * @param nombre 
+     * Inserta Usuario
+     */
     [WebMethod]
-    public bool insertar(string nombre, string apellido_paterno, string apellido_materno ,string nombreUsuario, string contrasena, string contrasenaVali) {
+    public int insertarUsuario(String nombre) {
         Usuario usr = new Usuario();
-        usr.nombre = nombre;
-        usr.apellido_paterno = apellido_paterno;
-        usr.apellido_materno = apellido_materno;
-        usr.nombreUsuario = nombreUsuario;
-        usr.contraseña = contrasena;
-        usr.contraseñaVali = contrasenaVali;
-        bool respuesta = NegocioUsr.insertarUser(usr);
-        if (respuesta) {
-            return respuesta;
-        } else {        
-            return respuesta;
-        }
-
-
+        usr.nombre  = nombre;
+        int respuesta = NegocioUsr.insertaUsuario(usr);
+        return respuesta;
     }
 
+    /*
+     * Lista de usuarios
+     */
+    [WebMethod]
+    public List<Usuario> tableroPuntaje() {
+        List<Usuario> listUsuario;
+        listUsuario = NegocioUsr.tableroPuntaje();
+        return listUsuario;
+    }
 
 }
 

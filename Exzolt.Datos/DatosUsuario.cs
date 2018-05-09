@@ -1,60 +1,101 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
 using Exzolt.Entidades;
 using Exzolt.Framework.AccesoDatos;
+using System.Collections.Generic;
 
 namespace Exzolt.Datos {
     public class DatosUsuario {
 
+        /*
+         * @param usuario 
+         * Valida Sesión
+         */
         public Usuario login(Usuario usuario) {
-            Usuario campos = new Usuario();
+            Usuario usr = new Usuario();
             DataTable dt = new DataTable();
             SqlConnection connection = null;
-            List<Usuario> camposList = new List<Usuario>();
             try {
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
                     SqlDataReader consulta;
                     connection.Open();
-                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT * FROM usuarios WHERE nombre = '" + usuario.nombre + "' OR nombre_usuario = '" + usuario.nombreUsuario + "' AND contrasena = '" + usuario.contraseña + "'");
+                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT * FROM usuarios WHERE idUsuario = " + usuario.id + "");
                     dt.Load(consulta);
                     connection.Close();
                 }
-                foreach (DataRow row in dt.Rows) {                   
-                    campos.id = Convert.ToInt32(row["id"].ToString());
-                    campos.nombre = row["nombre"].ToString();
-                    campos.nombre = row["apellido_materno"].ToString();
-                    campos.nombre = row["apellido_paterno"].ToString();
-                    campos.nombreUsuario = row["nombreUsuario"].ToString();
-                    campos.contraseña = row["contrasena"].ToString();              
-                }       
+                foreach (DataRow row in dt.Rows) {
+                    usr.id = Convert.ToInt32(row["idUsuario"].ToString());
+                    usr.nombre = row["nombre"].ToString();
+                }
+
             } catch (Exception ex) {
                 Console.WriteLine(ex);
             }
-            Console.WriteLine(campos);
-            return campos;
+            return usr;
         }
 
-        public bool insertarUserDatos(Usuario usuario) {        
+        /*
+         * @param usuario 
+         * Inserta Usuario
+         */
+        public int insertaUsuario(Usuario usuario) {
+            String querySelect = "INSERT INTO usuarios (nombre)"
+                               + "VALUES ('" + usuario.nombre + "') "
+                               + "SELECT idUsuario from usuarios WHERE nombre = '" + usuario.nombre + "'";
+            DataTable dt = new DataTable();
             SqlConnection connection = null;
-            bool respuesta = false;
+            int respuesta = 0;
             try {
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
+                    SqlDataReader consulta;
                     connection.Open();
-                    Ejecuta.ConsultaSinRetorno1(connection, "INSERT INTO usuarios (nombre,apellido_paterno,apellido_materno,nombre_usuario,contrasena) VALUES ('" + usuario.nombre + "','" + usuario.apellido_paterno + "','" + usuario.apellido_materno + "','" + usuario.nombreUsuario + "','" + usuario.contraseña + "')");           
+                    consulta = Ejecuta.ConsultaConRetorno(connection, querySelect);
+                    dt.Load(consulta);
                     connection.Close();
                 }
-                respuesta = true;
+                foreach (DataRow row in dt.Rows) {
+                   respuesta = Convert.ToInt32(row["idUsuario"].ToString());
+                }
             } catch (Exception ex) {
                 Console.WriteLine(ex);
-            }        
-            return  respuesta;            
+            }
+            return respuesta;
         }
 
+        /*
+         * Valida Sesión
+         * Consulta Tablero Principal
+         */
+        public List<Usuario> tableroPuntaje() {
+            List<Usuario> listUsuario = new List<Usuario>();
+            DataTable dt = new DataTable();
+            SqlConnection connection = null;
+            String query = "SELECT idUsuario, nombre, score " +
+                           "FROM usuarios INNER JOIN puntuaciones " +
+                           "ON usuarios.idPuntuacion = puntuaciones.idPuntuacion"; 
+            try {
+                
+                using (connection = Conexion.ObtieneConexion("ConexionBD")) {
+                    SqlDataReader consulta;
+                    connection.Open();
+                    consulta = Ejecuta.ConsultaConRetorno(connection, query);
+                    dt.Load(consulta);
+                    connection.Close();
+                }
+                foreach (DataRow row in dt.Rows) {
+                    Usuario usr = new Usuario();
+                    usr.id     = Convert.ToInt32(row["idUsuario"].ToString());
+                    usr.nombre = row["nombre"].ToString();
+                    usr.score  = Convert.ToInt32(row["score"].ToString());
+                    listUsuario.Add(usr);
+                }
+
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+            return listUsuario;
+        }
 
     }
 }
