@@ -36,13 +36,37 @@ namespace Exzolt.Datos {
         }
 
         /*
+         * @param nombre
+         * Verifica Registro
+         */
+        public Boolean verifiaSesion(String nombre) {
+            String query = "SELECT * FROM usuarios WHERE nombre = '" + nombre + "'";
+            DataTable dt = new DataTable();
+            SqlConnection connection = null;
+            Boolean verifica = false;
+            try {
+                using (connection = Conexion.ObtieneConexion("ConexionBD")) {
+                    SqlDataReader consulta;
+                    connection.Open();
+                    consulta = Ejecuta.ConsultaConRetorno(connection, query);
+                    dt.Load(consulta);
+                    connection.Close();
+                }
+                verifica = (dt.Rows.Count > 0) ? true : false;
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+            return verifica;
+        }
+
+        /*
          * @param usuario 
          * Inserta Usuario
          */
         public int insertaUsuario(Usuario usuario) {
-            String querySelect = "INSERT INTO usuarios (nombre)"
-                               + "VALUES ('" + usuario.nombre + "') "
-                               + "SELECT idUsuario from usuarios WHERE nombre = '" + usuario.nombre + "'";
+            String query = "INSERT INTO usuarios (nombre)"
+                         + "VALUES ('" + usuario.nombre + "') "
+                         + "SELECT idUsuario from usuarios WHERE nombre = '" + usuario.nombre + "'";
             DataTable dt = new DataTable();
             SqlConnection connection = null;
             int respuesta = 0;
@@ -50,7 +74,7 @@ namespace Exzolt.Datos {
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
                     SqlDataReader consulta;
                     connection.Open();
-                    consulta = Ejecuta.ConsultaConRetorno(connection, querySelect);
+                    consulta = Ejecuta.ConsultaConRetorno(connection, query);
                     dt.Load(consulta);
                     connection.Close();
                 }
