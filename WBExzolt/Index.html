@@ -1,532 +1,130 @@
-﻿<!DOCTYPE html>
-<html lang="en-us">
-<head>
-    <meta charset="utf-8">
+﻿<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <meta charset="utf-8">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta http-equiv="pragma" content="no-cache" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/demo.min.css" rel="stylesheet" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/invoice.min.css" rel="stylesheet" />
-    <link href="css/lockscreen.min.css" rel="stylesheet" />
-    <link href="css/smartadmin-production-plugins.min.css" rel="stylesheet" />
-    <link href="css/smartadmin-production.min.css" rel="stylesheet" />
-    <link href="css/smartadmin-rtl.min.css" rel="stylesheet" />
-    <link href="css/smartadmin-skins.min.css" rel="stylesheet" />
-    <link href="css/your_style.css" rel="stylesheet" />
-    <link href="css/fuelux.min.css" rel="stylesheet" />
-    <link href="css/select2/select2.min.css" rel="stylesheet" />
-    <link href="js/plugin/datatables/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    <link href="css/general.css" rel="stylesheet" />
-
-    <!--Estilos para plugin para rango de fechas-->
-    <link href="js/daterangepicker.css" rel="stylesheet" />
-
-
-
-    <!-- We recommend you use "your_style.css" to override SmartAdmin
-         specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-    <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-    <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
-
-    <!-- #FAVICONS -->
-    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-
-    <!-- #GOOGLE FONT -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
-
-    <!-- #APP SCREEN / ICONS -->
-    <!-- Specifying a Webpage Icon for Web Clip
-         Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-    <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-
-    <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <!-- Startup image for web apps -->
-    <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-    <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-    <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-
-    <!-- dsadsadsadsadsadsadsadsaasdsada-dsa-d-sa-dsa-d-sad-sa-d-sa-dsa -->
-    <script src="js/amcharts.js"></script>
-    <script src="js/serial.js"></script>
-    <script src="js/export.min.js"></script>
-    <link rel="stylesheet" href="js/export.css" type="text/css" media="all" />
-    <script src="js/light.js"></script>
-    <script src="js/fabric.min.js"></script>
-    <script src="js/FileSaver.min.js"></script>
-
-    <title>Monitoreo de Líneas de Producción</title>
-
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/demo.min.css" rel="stylesheet" />
+        <link href="css/invoice.min.css" rel="stylesheet" />
+        <link href="css/lockscreen.min.css" rel="stylesheet" />
+        <link href="css/smartadmin-production-plugins.min.css" rel="stylesheet" />
+        <link href="css/smartadmin-production.min.css" rel="stylesheet" />
+        <link href="css/smartadmin-rtl.min.css" rel="stylesheet" />
+        <link href="css/smartadmin-skins.min.css" rel="stylesheet" />
+        <link href="css/your_style.css" rel="stylesheet" />
+        <link href="css/fuelux.min.css" rel="stylesheet" />
+        <link href="css/select2/select2.min.css" rel="stylesheet" />
+        <link href="js/plugin/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="css/general.css" rel="stylesheet" />
+        <link href="js/daterangepicker.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+        <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+        <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+        <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+        <script src="js/amcharts.js"></script>
+        <script src="js/serial.js"></script>
+        <script src="js/export.min.js"></script>
+        <link rel="stylesheet" href="js/export.css" type="text/css" media="all" />
+        <script src="js/light.js"></script>
+        <script src="js/fabric.min.js"></script>
+        <script src="js/FileSaver.min.js"></script>
+        <title>Exzolt</title>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>  
+    </head>   
 
 
-    <!-- BOOTSTRAP JS -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <body class="desktop-detected smart-style-0" style="background-image: url('img/fondo-gallina.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+       
+         <div class="row" >
+             
+             <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
+                 <article id="articleRegistro2"  class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                     <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                         <header id="headerReg">
+                             <center><h2  style="color:#FFF; font-weight: 900;"><i class="icon-prepend  icon-edit"></i><strong>Registro<label id="Title"></label></strong></h2></center>
+                         </header>
 
-</head>
+                         <div class="widget-body" style="padding-bottom: 0px" id="divReg">
+                             <form id="formularioRegistro" class="smart-form">
+                                 <div id="divNombre" class="row" style="margin-top: 10px">
+                                    <section class="col col-1 form-group"></section>
+                                    <section class="col col-4 form-group">
+                                        <label class="control-label" style="color:#FFF; font-weight: 900;">Nombre:</label>
+                                    </section>
+                                    <section id="idSeccionNombre" class="col col-6 form-group">
+                                        <input style="background-color:transparent; "  placeholder="Ingrese el nombre del jugador" type="text" id="nombre" onkeypress="" class="form-control" name="nombre" />
+                                    </section>
+                                </div>
+                                 <div class="row" style="margin-top: 10px">
+                                     <section class="col col-1 form-group"></section>
+                                     <section class="col col-4 form-group">
+                                         <label class="control-label"  style="color:#FFF; font-weight: 900;">Avatar:</label>
+                                     </section>
+                                     <section class="col col-6 form-group">
+                                         <input style="background-color:transparent;" placeholder="Ingrese al avatar del jugador" type="file" id="avatar" onkeypress="" class="form-control" name="avatar" />
+                                     </section>
+                                 </div>
+                              
+                                 <div class="row" style="margin-top: 10px">
+                                     <section class="col col-1 form-group"></section>
+                                     <section class="col col-4 form-group">
+                                         <label class="control-label"  style="color:#FFF; font-weight: 900;">¿Quieres un alias?:</label></br>
+                                        <p style="color:#FFF;"> (Se mostrará como nombre del jugador)</p>
+                                     </section>
+                                     <section class="col col-6 form-group">
+                                         <label class="radio">
+                                             <input  id="radioSi" type="radio" class="radiobox" name="style-0a">
+                                             <span  style="color:#FFF; font-weight: 900;">Si</span>
+                                         </label>
+                                         <label class="radio">
+                                             <input id="radioNo"  type="radio" checked="true" class="radiobox" name="style-0a">
+                                             <span  style="color:#FFF; font-weight: 900;">No</span>
+                                         </label>
+                                     </section>
+                                 </div>
 
-<body class="desktop-detected smart-style-0">
+                                 <div id="divAlias">
+                                     <section class="col col-1 form-group"></section>
+                                     <section class="col col-4 form-group">
+                                         <label class="control-label" style="color:#FFF; font-weight: 900;">Alias:</label>
+                                     </section>
+                                     <section class="col col-6 form-group">
+                                         <input style="background-color:transparent; " placeholder="Ingrese el alias del jugador" type="text" id="alias" onkeypress="" class="form-control" name="alias" />
+                                     </section>
+                                 </div>
 
-    <!-- #HEADER -->
-    <header id="header">
-        <div id="logo-group">
-
-            <!-- PLACE YOUR LOGO HERE -->
-            <span id="logo"> <img src="img/logo-ITE.png" alt="SmartAdmin"> </span>
-            <!-- END LOGO PLACEHOLDER -->
-            <!-- Note: The activity badge color changes when clicked and resets the number to 0
-                 Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-            <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-            <!-- END AJAX-DROPDOWN -->
-        </div>
-
-        <!-- #PROJECTS: projects dropdown -->
-        <div class="project-context hidden-xs">
-
-            <span class="label"><h4><b>Proyecto: Líneas de Producción</b></h4></span>
-
-            <!-- Suggestion: populate this list with fetch and push technique -->
-            <!-- end dropdown-menu-->
-
-        </div>
-
-
-        <div id="menutipo" class="project-context hidden-xs" style="width:200px">
-            <label class="select2">
-                <select style="width:100%; visibility:hidden" class="select2" id="menu" name="menu"></select>
-            </label>
-
-        </div>
-        <!--<div id="menutransact" class="project-context hidden-xs" style="width:230px">
-            <label class="select2 ">
-                <select style="width:100%; visibility:hidden" class="select2" id="transact" name="transact"></select>
-            </label>
-        </div>
-
-        <div id="StatusTran" class="project-context hidden-xs"></div>
-        end projects dropdown -->
-        <!-- #TOGGLE LAYOUT BUTTONS -->
-        <!-- pulled right: nav area -->
-        <div class="pull-right">
-            <!-- collapse menu button -->
-            <div id="hide-menu" class="btn-header pull-right">
-                <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Ocultar Menu"><i class="fa fa-reorder"></i></a> </span>
+                                 <div class="row" style="margin-top: 10px">
+                                     <section class="col col-5 form-group"></section>
+                                   
+                                     <section class="col col-2 form-group">
+                                         <button id="botonReg" class="btn btn-info btn-sm" >Registrar</button>
+                                     </section>
+                                 </div>
+                             </form>
+                          
+                         </div>
+                      
+                     </div>
+                 </article>
             </div>
-            <!-- end collapse menu -->
-            <!-- #MOBILE -->
-            <!-- Top menu profile link : this shows only when top menu is active -->
-            <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
-                <li class="">
-                    <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
-                        <img src="img/avatars/sunny.png" alt="Pablo César" class="online" />
-                    </a>
-                    <ul class="dropdown-menu pull-right">
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#ajax/profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>S</u>alir</strong></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- logout button -->
-            <div id="Salir" class="btn-header transparent pull-right">
-                <span> <a href="login.html" title="Cerrar Sesion" data-action="userLogout" data-logout-msg="Desea cerrar la Sesion"><i class="fa fa-sign-out"></i></a> </span>
-            </div>
-            <!-- end logout button -->
-            <!-- search mobile button (this is hidden till mobile view port) -->
-            <div id="search-mobile" class="btn-header transparent pull-right">
-                <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
-            </div>
-            <!-- end search mobile button -->
-            <!-- #SEARCH -->
-            <!-- input: search field -->
-            <form action="#ajax/search.html" class="header-search pull-right">
-                <input id="search-fld" type="text" name="param" placeholder="Buscar">
-                <button type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-                <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
-            </form>
-            <!-- end input: search field -->
-            <!-- fullscreen button -->
-            <div id="fullscreen" class="btn-header transparent pull-right">
-                <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Pantalla Completa"><i class="fa fa-arrows-alt"></i></a> </span>
-            </div>
-            <!-- end fullscreen button -->
-            <!-- #Voice Command: Start Speech -->
-            <!-- NOTE: Voice command button will only show in browsers that support it. Currently it is hidden under mobile browsers.
-                       You can take off the "hidden-sm" and "hidden-xs" class to display inside mobile browser-->
-            <div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-                <div>
-                    <div class="popover bottom">
-                        <div class="arrow"></div>
-                        <div class="popover-content">
-                            <h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
-                            <h4 class="vc-title-error text-center">
-                                <i class="fa fa-microphone-slash"></i> Voice command failed
-                                <br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
-                                <br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
-                            </h4>
-                            <a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
-                            <a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end voice command -->
-            <!-- multiple lang dropdown : find all flags in the flags page -->
-            <ul class="header-dropdown-list hidden-xs">
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="img/blank.gif"
-                             class="flag flag-mx" alt="Español"> <span> MX</span> <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu pull-right">
-                        <li class="active">
-                            <a href="javascript:void(0);">
-                                <img src="img/blank.gif"
-                                     class="flag flag-mx" alt="Español"> Español
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <img src="img/blank.gif" class="flag flag-us"
-                                     alt="Ingles"> English (US)
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- end multiple lang -->
-
-        </div>
-        <!-- end pulled right: nav area -->
-
-    </header>
-    <!-- END HEADER -->
-    <!-- #NAVIGATION -->
-    <!-- Left panel : Navigation area -->
-    <!-- Note: This width of the aside area can be adjusted through LESS/SASS variables -->
-    <aside id="left-panel">
-        <!-- User info -->
-        <div class="login-info">
-            <span>
-                <!-- User image size is adjusted inside CSS, it should stay as is -->
-                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-                    <img src="img/avatars/male.png" alt="me" class="online" />
-                    <span class="reUser">
-                    </span>
-                    <i class="fa fa-angle-down"></i>
-                </a>
-            </span>
-        </div>
-        <!-- end user info -->
-        <!-- NAVIGATION : This navigation is also responsive
-
-        To make this navigation dynamic please make sure to link the node
-        (the reference to the nav > ul) after page load. Or the navigation
-        will not initialize.
-        -->
-
-        <nav></nav>
-        <!--
-        NOTE: Notice the gaps after each icon usage <i></i>..
-        Please note that these links work a bit different than
-        traditional href="" links. See documentation for details.
-        <span id="spanMinifyme" class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>-->
-
-
-    </aside>
-    <!-- END NAVIGATION -->
-    <!-- #MAIN PANEL -->
-    <div id="main" role="main">
-        <style>
-            #chartdiv {
-                width: 100%;
-                height: 500px;
-            }		
-        </style>
-        <!-- RIBBON -->
-        <div id="ribbon">
-
-            <span class="ribbon-button-alignment">
-                <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span>
-            </span>
-
-            <!-- breadcrumb -->
-            <ol class="breadcrumb">
-                <!-- This is auto generated -->
-            </ol>
-            <!-- end breadcrumb -->
-            <!-- You can also add more buttons to the
-            ribbon for further usability
-
-            Example below:
-
-            <span class="ribbon-button-alignment pull-right" style="margin-right:25px">
-                <a href="#" id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa fa-grid"></i> Change Grid</a>
-                <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa fa-plus"></i> Add</span>
-                <button id="search" class="btn btn-ribbon" data-title="search"><i class="fa fa-search"></i> <span class="hidden-mobile">Search</span></button>
-            </span> -->
-
-        </div>
-
-        <!-- END RIBBON -->
-        <!-- #MAIN CONTENT -->
-        <div id="content">
-            <!--<section class="col-md-6" id="graa">
-                <br /><br />
-                <div id="chartdiv"></div>
-            </section>-->
-
-            <section class="col-md-3" id="gra">
-                <br /><br />
-
-            </section>
-
-
-        </div>
-
-
-    </div>
-
-    <!-- END #MAIN PANEL -->
-    <!-- #PAGE FOOTER -->
-    <div class="page-footer">
-        <div style="color: white; position: left; position: bottom; left: 0px; right: 0px; bottom: 0px; height: 0px; text-align: center;">
-            <span class="txt-color-white">©2017 ITE Soluciones SA. de CV. Todos los derechos reservados. V.1.2qa </span>
-        </div>
-        <!-- end col -->
-        <!-- end row -->
-    </div>
-    <!-- END FOOTER -->
-    <!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-         Note: These tiles are completely responsive, you can add as many as you like -->
-    <div id="shortcut">
-        <ul>
-            <li>
-                <a href="#" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Correo electrónico <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
-            </li>
-            <li>
-                <a href="#" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendario</span> </span> </a>
-            </li>
-            <li>
-                <a href="#l" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>Mi perfil </span> </span> </a>
-            </li>
-        </ul>
-    </div>
-    <!-- END SHORTCUT AREA -->
-    <!--================================================== -->
-    <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
-    <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
-    <!-- #PLUGINS -->
-    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-
-
-
-    <script src="js/Index.js"></script>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        if (!window.jQuery) {
-            document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-        }
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script>
-        if (!window.jQuery.ui) {
-            document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-        }
-    </script>
-
-    <!-- IMPORTANT: APP CONFIG -->
-    <script src="js/app.config.js"></script>
-
-    <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-    <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
-
-    <!-- BOOTSTRAP JS -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-
-    <!-- CUSTOM NOTIFICATION -->
-    <script src="js/notification/SmartNotification.min.js"></script>
-
-    <!-- JARVIS WIDGETS -->
-    <script src="js/smartwidgets/jarvis.widget.min.js"></script>
-
-    <!-- EASY PIE CHARTS -->
-    <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
-    <!-- SPARKLINES -->
-    <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- JQUERY MASKED INPUT -->
-    <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
-
-    <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
-
-
-    <!-- JQUERY SELECT2 INPUT -->
-   
-    <script src="js/plugin/select2/select2.js"></script>
-
-    <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
-  
-
-    <script src="js/plugin/select2/select2.min.js"></script>
-
-
-
-    <!-- JQUERY UI + Bootstrap Slider -->
-    <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-
-    <!-- browser msie issue fix -->
-    <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-
-    <!-- FastClick: For mobile devices: you can disable this in app.js -->
-    <script src="js/plugin/fastclick/fastclick.min.js"></script>
-
-    <!--[if IE 8]>
-        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-    <![endif]-->
-    <!-- Demo purpose only -->
-    <script src="js/demo.min.js"></script>
-
-    <!-- MAIN APP JS FILE -->
-    <script src="js/app.min.js"></script>
-
-
-    <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-    <!-- Voice command : plugin -->
-    <script src="js/speech/voicecommand.min.js"></script>
-
-    <!-- SmartChat UI : plugin -->
-    <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
-    <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
-
-
-    <script src="js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-    <script src="js/plugin/fuelux/wizard/wizard.min.js"></script>
-
-
-    <!-- Your GOOGLE ANALYTICS CODE Below -->
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-
-        $(document).ready(onReady);
-
-        function setTheme() {
-            $('#smart-style-0').click(function () {
-                localStorage.setItem("skin", "smart-style-0");
-            });
-
-            $('#smart-style-1').click(function () {
-                localStorage.setItem("skin", "smart-style-1");
-            });
-
-            $('#smart-style-2').click(function () {
-                localStorage.setItem("skin", "smart-style-2");
-            });
-
-            $('#smart-style-3').click(function () {
-                localStorage.setItem("skin", "smart-style-3");
-            });
-
-            $('#smart-style-4').click(function () {
-                localStorage.setItem("skin", "smart-style-4");
-            });
-
-            $('#smart-style-5').click(function () {
-                localStorage.setItem("skin", "smart-style-5");
-            });
-
-            $('#smart-style-6').click(function () {
-                localStorage.setItem("skin", "smart-style-6");
-            });
-
-        }
-
-
-        function onReady() {
-            setTheme();
-        }
-
-    </script>
-
-
-
-
-    <!-- DataTables -->
-    <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
-    <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
-    <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
-    <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
-    <script src="js/plugin/datatables/dataTableDefaults.js"></script>
-
-    <script src="js/plugin/datatables/extensions/Buttons/js/dataTables.buttons.js"></script>
-    <script src="js/plugin/datatables/extensions/Buttons/js/buttons.flash.min.js"></script>
-    <script src="js/plugin/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
-    <script src="js/plugin/datatables/extensions/Buttons/js/buttons.print.min.js"></script>
-    <script src="js/plugin/datatables/extensions/Buttons/js/jszip.min.js"></script>
-    <script src="js/plugin/datatables/extensions/Buttons/js/pdfmake.min.js"></script>
-    <script src="js/plugin/datatables/extensions/Buttons/js/vfs_fonts.js"></script>
-
-    <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
-    <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
-    <script src="js/pagination-tda-pluging.js"></script>
-    <script src="js/plugin/moment/moment.min.js"></script>
-    <script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="js/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-    <script src="js/menu/menus.js"></script>
-    <script src="js/plugin/timer/jquery.timer.js"></script>
-    <!--Estilos para plugin para rango de fechas-->
-    <script src="js/daterangepicker.js"></script>
-    <script src="js/moment.min.js"></script>
-
-</body>
+        <script src="js/index.js"></script>
+    </body>
 </html>
-

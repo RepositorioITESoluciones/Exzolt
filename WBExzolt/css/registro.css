@@ -1,0 +1,61 @@
+.registro {
+    position : center;
+    width : auto ;
+    height : auto ;
+
+}
+
+/* all */
+::-webkit-input-placeholder { color:#ffffff; }
+::-moz-placeholder { color:#ffffff; } /* firefox 19+ */
+:-ms-input-placeholder { color:#ffffff; } /* ie */
+input:-moz-placeholder { color:#ffffff; }
+ 
+/* individual: webkit */
+#nombre::-webkit-input-placeholder { color: #ffffff; }
+#alias::-webkit-input-placeholder { color: #ffffff; }
+ 
+/* individual: mozilla */
+#nombre::-moz-placeholder { color: #ffffff; }
+#alias::-moz-placeholder { color: #ffffff; }
+
+
+.has-error input[type=text], .has-error input[type=text] + .input-group-addon {
+        border-color: #ffcd32 !important;
+}
+
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+    color: #ffcd32 !important   ;
+}
+
+.has-success .form-control {
+    border-color: #ffffff !important;
+}
+#articleRegistro3 {
+    margin-top: 20% !important;
+}
+#divNombre {
+     align-content: center !important;
+}
+#divReg {
+    background-color:#0202025e!important;
+    border-bottom-right-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+}
+#headerReg {
+    background-color:#02020285!important;
+    border-top-right-radius: 25px !important;
+    border-top-left-radius: 25px !important;
+}
+.form-control {
+    color: #ffffff !important;
+    padding-left: 5px !important;
+}
+#botonReg {
+    color: #3b6278;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    border-radius: 10px !important;
+}
+
+

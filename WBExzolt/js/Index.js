@@ -1,169 +1,368 @@
-﻿function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
+﻿var otable;
+var url;
+var rows;
+var data;
+$(function () {
+    initEventos();
+    //initDataTable();
+});
+function initEventos() {
+   
+    $("#divAlias").hide();
+    bootsVal();
+    $('#radioSi').change(function () {
+        if ($('input#radioSi').is(':checked')) {
+            $('#nombre').val('');
+            $("#divAlias").show();
+            $("#divNombre").hide();
+            $('#formularioRegistro').bootstrapValidator('destroy');
+            bootsVal();
         }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
+    })
+    $('#radioNo').change(function () {
+        if ($('input#radioNo').is(':checked')) {
+            $('#alias').val('');
+            $("#divAlias").hide();
+            $("#divNombre").show();
+            $('#formularioRegistro').bootstrapValidator('destroy');
+            bootsVal();
         }
-    }
-    return "";
-}
-function deleteAllCookies() {
-    var cookies = document.cookie.split(";");
+    })
+ 
 
-    var tiempo = new Date();
-    var fecha = new Date();
-
-    var hora = tiempo.getHours();
-    var minuto = tiempo.getMinutes();
-    var segundo = tiempo.getSeconds();
-
-    var dia = fecha.getDate();
-    var mes = fecha.getMonth();
-    var año = fecha.getFullYear();
-
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-
-        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    }
-    window.location = ("Login.html");
-    console.log("Session eliminada");
-}
-/**
- * Función que muestra el mensaje de color azul
- * @param titulo
- * @param mensaje
- * @returns
- */
-
-function showOkMessage(titulo, mensaje) {
-    $.smallBox({
-        title: titulo,
-        content: mensaje,
-        color: "#296191",
-        timeout: 4000,
-        icon: "fa fa-thumbs-o-up swing animated"
+    $('#botonReg').click(function () {
+        bootsVal();
+        $('#formularioRegistro').data('bootstrapValidator').validate();
+        var n = $('#formularioRegistro').data('bootstrapValidator').isValid();
+        if (n) {
+            $.ajax({
+                async: false,
+                type: 'POST',
+                url: 'WSExzolt.asmx/ActualizarDatosEmpresariales',
+                data: {
+                    idEmpresa: rows[12],
+                    nombre: $('#nombre').val(),
+                    fechaRegistro: $('#fecha').val(),
+                    idGiro: $('#giro').val(),
+                    ComboTPer: $('#tipoPer').val(),
+                    RazonSocial: $('#razonSocial').val(),
+                    RFC: rfc,
+                    ComboEstado: $('#ComboEstado').val(),
+                    ComboCP: $('#ComboCP').val(),
+                    Calle: $('#calle').val(),
+                    NumExt: $('#numExt').val(),
+                    NumInt: $('#numInt').val()
+                },
+                success: function (data) {
+                    $.smallBox({
+                        title: "Éxito!",
+                        content: "Empresa <b>" + rows[0] + "</b> editada",
+                        color: "#739e73",
+                        timeout: 2000,
+                        icon: "fa fa-thumbs-up swing animated"
+                    });
+                }
+            });
+        } else {
+            $('#botonReg').prop("disabled", false);
+            bootsVal();
+        }
     });
-}
 
-/**
- * Función que muestra el mensaje de color rojo
- * @param titulo
- * @param mensaje
- * @returns
- */
-function showErrorMessage(titulo, mensaje) {
-    $.smallBox({
-        title: titulo,
-        content: mensaje,
-        color: "#c79121",
-        timeout: 4000,
-        icon: "fa fa-times-circle swing animated"
+    $('#btnguardar2').click(function () {
+        var rfc = "";
+        if (banderaRFC == "Fisico") {
+            rfc = $("#rfcFisico").val();
+        } else {
+            rfc = $("#rfcMoral").val();
+        }
+        rfc = rfc.toUpperCase();
+        bootsVal();
+        $('#FormEmpresa').data('bootstrapValidator').validate();
+        var n = $('#FormEmpresa').data('bootstrapValidator').isValid();
+        if (n) {
+            $('#divDatosEmpresariales').show();
+            $('#FormularioDatosEmpresariales').hide();
+
+            $.ajax({
+                async: false,
+                type: 'POST',
+                url: 'WSLinPro.asmx/ActualizarDatosEmpresariales',
+                data: {
+                    idEmpresa: rows[12],
+                    nombre: $('#nombre').val(),
+                    fechaRegistro: $('#fecha').val(),
+                    idGiro: $('#giro').val(),
+                    ComboTPer: $('#tipoPer').val(),
+                    RazonSocial: $('#razonSocial').val(),
+                    RFC: rfc,
+                    ComboEstado: $('#ComboEstado').val(),
+                    ComboCP: $('#ComboCP').val(),
+                    Calle: $('#calle').val(),
+                    NumExt: $('#numExt').val(),
+                    NumInt: $('#numInt').val()
+                },
+                success: function (data) {
+                    $.smallBox({
+                        title: "Éxito!",
+                        content: "Empresa <b>" + rows[0] + "</b> editada",
+                        color: "#739e73",
+                        timeout: 2000,
+                        icon: "fa fa-thumbs-up swing animated"
+                    });
+                }
+            });
+            cargarTabla();
+            $('#FormEmpresa')[0].reset();
+            $('#FormEmpresa').bootstrapValidator('destroy');
+        } else {
+            $('#btnguardar2').prop("disabled", false);
+            bootsVal();
+        }
     });
+
+   
+
+    
 }
 
-/**
- * Función que muestra el mensaje de color amarillo
- * @param titulo
- * @param mensaje
- * @returns
- */
-function showWarningMessage(titulo, mensaje) {
-    $.smallBox({
-        title: titulo,
-        content: mensaje,
-        color: "#C79121",
-        timeout: 4000,
-        icon: "fa fa-exclamation-circle swing animated"
-    });
-}
-
-//function comboDepartamentos() {
-//    var cadenaCombodepartamentosPiezas = ""; 
+//function initDataTable() {
+//    $.fn.dataTable.ext.errMode = 'none';
+//    var responsiveHelper_datatable_fixed_column = undefined;
+//    var breakpointDefinition = {
+//        tablet: 1024,
+//        phone: 480,
+//        desktop: 1260
+//    };
+//    var datos = [];
 //    $.ajax({
 //        async: false,
 //        type: 'POST',
-//        url: 'WSLinPro.asmx/departamento',
+//        url: 'WSLinPro.asmx/LlenaTablaDE',
 //        dataType: 'json',
 //        contentType: 'application/json; charset=utf-8',
+//        beforeSend: function () {
+//            $('#loadingMod').modal({
+//                backdrop: 'static',
+//                keyboard: false
+//            });
+//        },
 //        success: function (response) {
+//            $('#loadingMod').modal('hide');
 //            $.each(response, function (row, index) {
-//                cadenaCombodepartamentosPiezas += '<option value="' + 0 + '"> Seleccione una opción </option>'
 //                $.each(index.ListaRegistros, function (r, arr) {
-//                   // console.log("AAAggggggggAA: " + JSON.stringify(arr));
-//                    cadenaCombodepartamentosPiezas += '<option value="' + arr.departamento.idDepartamento + '">' + arr.departamento.nombreDepartamento + '</option>'
-                    
+//                    var d = new Date(arr.fechaRegistro).forma;
+//                    datos.push([arr.nombre, arr.fechaRegistro.substring(0, 10), arr.DatosFiscales.RFC, arr.DatosFiscales.RazonSocial, arr.DatosFiscales.TipoPersona.TipoPersona, arr.idGiro, arr.DatosFiscales.TipoPersona.IdTipoPersona, arr.DatosFiscales.Estado.idEstado, arr.DatosFiscales.C_CP, arr.DatosFiscales.Calle, arr.DatosFiscales.NumeroExterior, arr.DatosFiscales.NumeroInterior, arr.idEmpresa]);
 //                });
-//            });     
+//            });
 //        }
+
 //    });
-//    return cadenaCombodepartamentosPiezas;
+
+//    otable = $('#TablaDatosEmpresariales')
+//        .DataTable({
+
+//            "aLengthMenu": [
+//                [5, 10, 25, 50],
+//                [5, 10, 25, 50]
+//            ],
+//            "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'l><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>" +
+//            "t" +
+//            "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+//            "oLanguage": {
+//                "sUrl": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+//            },
+
+//            "autoWidth": true,
+//            "preDrawCallback": function () {
+//                if (!responsiveHelper_datatable_fixed_column) {
+//                    responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper(
+//                        $('#TablaDatosEmpresariales'), breakpointDefinition);
+//                }
+//            },
+//            "rowCallback": function (nRow) {
+//                responsiveHelper_datatable_fixed_column
+//                    .createExpandIcon(nRow);
+//            },
+//            "drawCallback": function (oSettings) {
+//                responsiveHelper_datatable_fixed_column.respond();
+//            },
+//            data: datos,
+//            columns: [{
+//                title: "Nombre"
+//            },
+//            {
+//                title: "Fecha De Registro"
+//            },
+//            {
+//                title: "RFC"
+//            },
+//            {
+//                title: "Razón Social"
+//            },
+//            {
+//                title: "Tipo De Persona"
+//            },
+//            {
+//                title: "idGiro",
+//                visible: false
+//            },
+//            {
+//                title: "Id tipo persona",
+//                visible: false
+//            },
+//            {
+//                title: "idEstado",
+//                visible: false
+//            },
+//            {
+//                title: "cp",
+//                visible: false
+//            },
+//            {
+//                title: "calle",
+//                visible: false
+//            },
+//            {
+//                title: "numExt",
+//                visible: false
+//            },
+//            {
+//                title: "numInt",
+//                visible: false
+//            }
+
+//            ]
+//        });
+
+//    // Evento creado para realizar la búsqueda cuando se presione la tecla ENTER
+//    $("#TablaDatosEmpresariales thead th input[type=text]").on(
+//        'keyup',
+//        function (e) {
+//            otable.column($(this).parent().index() + ':visible').search(
+//                this.value).draw();
+//        });
+
+//    // Método creado para agregar el evento de selección de una fila
+//    $('#TablaDatosEmpresariales tbody').on(
+//        'click',
+//        'tr',
+//        function () {
+//            if ($(this).hasClass('selected')) {
+//                $(this).removeClass('selected');
+//            } else {
+//                $('#TablaDatosEmpresariales').DataTable().$('tr.selected').removeClass(
+//                    'selected');
+//                $(this).addClass('selected');
+//            }
+//        });
+//    // Evento creado para abrir la ventana de editar al dar doble click sobre un
+//    // registro
+//    $('#TablaDatosEmpresariales tbody').on('dblclick', 'tr', function () {
+//        $(this).addClass('selected');
+//        $("#ComboEstado").val(0);
+//        $("#ComboEstado").trigger("change");
+//        $(".estado").removeClass("has-error");
+
+//        $("#ComboCP").val(0);
+//        $("#ComboCP").trigger("change");
+//        $(".codigo").removeClass("has-error");
+
+//        $("#errorCp").hide();
+//        $("#errorEstado").hide();
+//        bootsVal();
+//        editUsuario();
+//        edit = 1;
+
+//    });
 //}
 
-function datetimeToDateFormat(date) {
-    var fecha = date.substr(6, 13);
-    var fechaAlta = new Date(parseInt(fecha));
-    var day = fechaAlta.getDate();
-    var month = fechaAlta.getMonth() + 1;
-    var year = fechaAlta.getFullYear();
-    var hours = fechaAlta.getHours();
-    var minutes = fechaAlta.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return (day < 10 ? "0" : "") + day + "/" + (month < 10 ? "0" : "") + month + "/" + year + " " + strTime;
+
+
+//Funcion creada para validar campos vacios en formulario
+function bootsVal() {
+
+    $('#formularioRegistro').bootstrapValidator({
+        live: 'enabled',
+        submitButtons: 'button[id="botonReg"]',
+        message: 'Valor invalido',
+        fields: {
+            nombre: {
+                group: '.col-6',
+                validators: {
+                    notEmpty: {
+                        message: 'El nombre es obligatorio'
+                    },
+                }
+            },
+            alias: {
+                group: '.col-6',
+                validators: {
+                    notEmpty: {
+                        message: 'El alias es obligatorio'
+                    },
+                }
+            }
+        }
+    });
 }
 
-function datetimeToFechaBaja(date) {
-    var date = new Date()
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return (day < 10 ? "0" : "") + day + "/" + (month < 10 ? "0" : "") + month + "/" + year + " " + strTime;
-}
 
-function eliminaEspacio(e, object) {
-    var val = object.value.trim();
-    var type = object.type;
-    var id = object.id;
-    var regex = /^[A-Za-z0-9-_\sáÁÉéÍíÓóÚúñÑ]*$/;
-    tecla = (document.all) ? e.keyCode : e.which;
-    if (val.length === 0 && tecla === 32) {
-        return false;
-    }
-    //else {
-    //    if (type === 'text' && val.length >= 0) {
-    //        console.log("value " + val.length);
-    //        console.log(val.match(regex));
-    //        if (regex.test(val) !== true) {
-    //            $("#" + id).parent().addClass("has-error");
-    //            $("#" + id + " + small").text('Solo caracteres alfanumericos');
-    //            $("#" + id + " + small").css('display', 'block');
-    //            return false; 
-    //        } 
-    //    } else {
-    //        $("#" + id).blur(function () {
-    //            if ($("#" + id).val().length === 0) {
-    //                $("#"+ id +"+ small").text('El '+id+' es obligatorio');
-    //            }
-    //        });
-    //    }
-    //}
-}
+//function bootsValAlias() {
+
+//    $('#formularioRegistro').bootstrapValidator({
+//        live: 'enabled',
+//        submitButtons: 'button[id="botonReg"]',
+//        message: 'Valor invalido',
+//        fields: {
+//            alias: {
+//                group: '.col-6',
+//                validators: {
+//                    callback: {
+//                        message: 'El alias es obligatorio',
+//                        callback: function (value, validator, $field) {
+//                            //if ($('input#radioSi').is(':checked')) {
+//                                if (value === '0') {
+//                                    return false
+//                                } else {
+//                                    return true
+//                                }
+//                            //}
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    });
+//}
+
+
+////Funcion encargada de refrescar la tabla despues de haber creado, editado o eliminado un registro
+//function cargarTabla() {
+//    var datos = [];
+//    $.ajax({
+//        async: false,
+//        type: 'POST',
+//        url: 'WSLinPro.asmx/LlenaTablaDE',
+//        dataType: 'json',
+//        contentType: 'application/json; charset=utf-8',
+//        beforeSend: function () {
+//            $('#loadingMod').modal({
+//                backdrop: 'static',
+//                keyboard: false
+//            });
+//        },
+//        success: function (response) {
+//            $('#loadingMod').modal('hide');
+//            $.each(response, function (row, index) {
+
+//                $.each(index.ListaRegistros, function (r, arr) {
+//                    datos.push([arr.nombre, arr.fechaRegistro.substring(0, 10), arr.DatosFiscales.RFC, arr.DatosFiscales.RazonSocial, arr.DatosFiscales.TipoPersona.TipoPersona, arr.idGiro, arr.DatosFiscales.TipoPersona.IdTipoPersona, arr.DatosFiscales.Estado.idEstado, arr.DatosFiscales.C_CP, arr.DatosFiscales.Calle, arr.DatosFiscales.NumeroExterior, arr.DatosFiscales.NumeroInterior, arr.idEmpresa]);
+//                });
+//            });
+//        }
+//    });
+//    otable.clear();
+//    otable.rows.add(datos);
+//    otable.draw();
+//}
