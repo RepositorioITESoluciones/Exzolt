@@ -3,7 +3,6 @@
         <link rel="stylesheet" type="text/css" href="css/registro.css">
         <meta charset="utf-8">
 
-      
         <meta name="description" content="">
         <meta name="author" content="">
         <meta http-equiv="pragma" content="no-cache" />
@@ -75,11 +74,14 @@
                                 </div>
                                  <div class="row" style="margin-top: 10px">
                                      <section class="col col-1 form-group"></section>
-                                     <section class="col col-4 form-group">
+                                     <section class="col col-2 form-group">
                                          <label class="control-label"  style="color:#FFF; font-weight: 900;">Avatar:</label>
                                      </section>
+                                     <section class="col col-2 form-group">
+                                         <img id="img1" width="50px" height="5  0px"><br/>
+                                     </section>
                                      <section class="col col-6 form-group">
-                                         <input style="background-color:transparent;" placeholder="Ingrese al avatar del jugador" type="file" id="avatar" onkeypress="" class="form-control" name="avatar" />
+                                         <input style="background-color:transparent;" onclick="mostrarImagen()" Ingrese al avatar del jugador" type="file" id="avatar" onkeypress="" class="form-control" name="avatar" />
                                      </section>
                                  </div>
                               
@@ -115,7 +117,7 @@
                                      <section class="col col-5 form-group"></section>
                                    
                                      <section class="col col-2 form-group">
-                                         <button id="botonReg" class="btn btn-info btn-sm" >Registrar</button>
+                                         <button id="botonReg" class="btn btn-info btn-sm" onclick='return false;' >Registrar</button>
                                      </section>
                                  </div>
                              </form>
@@ -126,5 +128,171 @@
                  </article>
             </div>
         <script src="js/index.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        if (!window.jQuery) {
+            document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+        }
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script>
+        if (!window.jQuery.ui) {
+            document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        }
+        </script>
+
+        <!-- IMPORTANT: APP CONFIG -->
+        <script src="js/app.config.js"></script>
+
+        <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+        <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+
+        <!-- BOOTSTRAP JS -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+
+        <!-- CUSTOM NOTIFICATION -->
+        <script src="js/notification/SmartNotification.min.js"></script>
+
+        <!-- JARVIS WIDGETS -->
+        <script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+        <!-- EASY PIE CHARTS -->
+        <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+        <!-- SPARKLINES -->
+        <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+        <!-- JQUERY MASKED INPUT -->
+        <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+
+        <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
+        <!-- JQUERY SELECT2 INPUT -->
+
+        <script src="js/plugin/select2/select2.js"></script>
+
+        <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
+
+
+        <script src="js/plugin/select2/select2.min.js"></script>
+
+
+
+        <!-- JQUERY UI + Bootstrap Slider -->
+        <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+        <!-- browser msie issue fix -->
+        <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+        <!-- FastClick: For mobile devices: you can disable this in app.js -->
+        <script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+        <!--[if IE 8]>
+        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+        <![endif]-->
+        <!-- Demo purpose only -->
+        <script src="js/demo.min.js"></script>
+
+        <!-- MAIN APP JS FILE -->
+        <script src="js/app.min.js"></script>
+
+
+        <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+        <!-- Voice command : plugin -->
+        <script src="js/speech/voicecommand.min.js"></script>
+
+        <!-- SmartChat UI : plugin -->
+        <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+        <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+
+        <script src="js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+        <script src="js/plugin/fuelux/wizard/wizard.min.js"></script>
+
+
+        <!-- Your GOOGLE ANALYTICS CODE Below -->
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+
+        $(document).ready(onReady);
+
+        function setTheme() {
+            $('#smart-style-0').click(function () {
+                localStorage.setItem("skin", "smart-style-0");
+            });
+
+            $('#smart-style-1').click(function () {
+                localStorage.setItem("skin", "smart-style-1");
+            });
+
+            $('#smart-style-2').click(function () {
+                localStorage.setItem("skin", "smart-style-2");
+            });
+
+            $('#smart-style-3').click(function () {
+                localStorage.setItem("skin", "smart-style-3");
+            });
+
+            $('#smart-style-4').click(function () {
+                localStorage.setItem("skin", "smart-style-4");
+            });
+
+            $('#smart-style-5').click(function () {
+                localStorage.setItem("skin", "smart-style-5");
+            });
+
+            $('#smart-style-6').click(function () {
+                localStorage.setItem("skin", "smart-style-6");
+            });
+
+        }
+
+
+        function onReady() {
+            setTheme();
+        }
+
+        </script>
+
+        <!-- DataTables -->
+        <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+        <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+        <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+        <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+        <script src="js/plugin/datatables/dataTableDefaults.js"></script>
+
+        <script src="js/plugin/datatables/extensions/Buttons/js/dataTables.buttons.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.flash.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.print.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/jszip.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/pdfmake.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/vfs_fonts.js"></script>
+
+        <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="js/pagination-tda-pluging.js"></script>
+        <script src="js/plugin/moment/moment.min.js"></script>
+        <script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="js/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+        <script src="js/plugin/timer/jquery.timer.js"></script>
+        <!--Estilos para plugin para rango de fechas-->
+        <script src="js/daterangepicker.js"></script>
+        <script src="js/moment.min.js"></script>
+
+
     </body>
 </html>
