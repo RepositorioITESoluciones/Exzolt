@@ -19,6 +19,16 @@ namespace Exzolt.Negocio {
         }
 
         /*
+         * @param nombre
+         * Verifica Registro
+         */
+        public Boolean verifiaSesion(String nombre) {
+            Boolean verifica;
+            verifica = DatosUsr.verifiaSesion(nombre);
+            return verifica;
+        }
+
+        /*
          * @param usuario 
          * Inserta Usuario
          */

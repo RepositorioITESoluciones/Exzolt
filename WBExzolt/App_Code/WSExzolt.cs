@@ -27,6 +27,17 @@ public class WSExzolt : System.Web.Services.WebService
 
     /*
      * @param nombre 
+     * Verifica Registro
+     */
+    [WebMethod]
+    public Boolean verifiaSesion(String nombre) {
+        Boolean verifia;
+        verifia = NegocioUsr.verifiaSesion(nombre);
+        return verifia;
+    }
+
+    /*
+     * @param nombre 
      * Inserta Usuario
      */
     [WebMethod]
