@@ -1,0 +1,249 @@
+﻿<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/registro.css">
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/demo.min.css" rel="stylesheet" />
+    <link href="css/invoice.min.css" rel="stylesheet" />
+    <link href="css/lockscreen.min.css" rel="stylesheet" />
+    <link href="css/smartadmin-production-plugins.min.css" rel="stylesheet" />
+    <link href="css/smartadmin-production.min.css" rel="stylesheet" />
+    <link href="css/smartadmin-rtl.min.css" rel="stylesheet" />
+    <link href="css/smartadmin-skins.min.css" rel="stylesheet" />
+    <link href="css/your_style.css" rel="stylesheet" />
+    <link href="css/fuelux.min.css" rel="stylesheet" />
+    <link href="css/select2/select2.min.css" rel="stylesheet" />
+    <link href="js/plugin/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="js/daterangepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+    <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+    <script src="js/amcharts.js"></script>
+    <script src="js/serial.js"></script>
+    <script src="js/export.min.js"></script>
+    <link rel="stylesheet" href="js/export.css" type="text/css" media="all" />
+    <script src="js/light.js"></script>
+    <script src="js/fabric.min.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <title>Exzolt</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+</head>
+ 
+
+
+    <body class="desktop-detected smart-style-0" style="background-image: url('img/fondo-gallina.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+
+         <div class="row" >
+             <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
+                 <article id="articleRegistro2"  class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                     <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                         <div class="widget-body">
+                             <table id="TablaPuntaje" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                                 <thead>
+                                     <tr>
+                                         <th class="hasinput" style="width:5%">
+
+                                         </th>
+                                         <th class="hasinput" style="width:5%">
+                                            
+                                         </th>
+                                     </tr>
+                                     <tr>
+                                         <th data-class="expand">Nombre</th>
+                                         <th>Score</th>
+                                     </tr>
+                                 </thead>
+                             </table>
+                         </div>
+                      
+                     </div>
+                 </article>
+            </div>
+       
+        <script src="js/tablero.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        if (!window.jQuery) {
+            document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+        }
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script>
+        if (!window.jQuery.ui) {
+            document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        }
+        </script>
+
+        <!-- IMPORTANT: APP CONFIG -->
+        <script src="js/app.config.js"></script>
+
+        <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+        <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+
+        <!-- BOOTSTRAP JS -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+
+        <!-- CUSTOM NOTIFICATION -->
+        <script src="js/notification/SmartNotification.min.js"></script>
+
+        <!-- JARVIS WIDGETS -->
+        <script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+        <!-- EASY PIE CHARTS -->
+        <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+        <!-- SPARKLINES -->
+        <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+        <!-- JQUERY MASKED INPUT -->
+        <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+
+        <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
+        <!-- JQUERY SELECT2 INPUT -->
+
+        <script src="js/plugin/select2/select2.js"></script>
+
+        <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
+
+
+        <script src="js/plugin/select2/select2.min.js"></script>
+
+
+
+        <!-- JQUERY UI + Bootstrap Slider -->
+        <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+        <!-- browser msie issue fix -->
+        <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+        <!-- FastClick: For mobile devices: you can disable this in app.js -->
+        <script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+        <!--[if IE 8]>
+    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+    <![endif]-->
+        <!-- Demo purpose only -->
+        <script src="js/demo.min.js"></script>
+
+        <!-- MAIN APP JS FILE -->
+        <script src="js/app.min.js"></script>
+
+
+        <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+        <!-- Voice command : plugin -->
+        <script src="js/speech/voicecommand.min.js"></script>
+
+        <!-- SmartChat UI : plugin -->
+        <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+        <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+
+        <script src="js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+        <script src="js/plugin/fuelux/wizard/wizard.min.js"></script>
+
+
+        <!-- Your GOOGLE ANALYTICS CODE Below -->
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+
+        $(document).ready(onReady);
+
+        function setTheme() {
+            $('#smart-style-0').click(function () {
+                localStorage.setItem("skin", "smart-style-0");
+            });
+
+            $('#smart-style-1').click(function () {
+                localStorage.setItem("skin", "smart-style-1");
+            });
+
+            $('#smart-style-2').click(function () {
+                localStorage.setItem("skin", "smart-style-2");
+            });
+
+            $('#smart-style-3').click(function () {
+                localStorage.setItem("skin", "smart-style-3");
+            });
+
+            $('#smart-style-4').click(function () {
+                localStorage.setItem("skin", "smart-style-4");
+            });
+
+            $('#smart-style-5').click(function () {
+                localStorage.setItem("skin", "smart-style-5");
+            });
+
+            $('#smart-style-6').click(function () {
+                localStorage.setItem("skin", "smart-style-6");
+            });
+
+        }
+
+
+        function onReady() {
+            setTheme();
+        }
+
+        </script>
+
+        <!-- DataTables -->
+        <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+        <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+        <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+        <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+        <script src="js/plugin/datatables/dataTableDefaults.js"></script>
+
+        <script src="js/plugin/datatables/extensions/Buttons/js/dataTables.buttons.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.flash.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.print.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/jszip.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/pdfmake.min.js"></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/vfs_fonts.js"></script>
+
+        <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="js/pagination-tda-pluging.js"></script>
+        <script src="js/plugin/moment/moment.min.js"></script>
+        <script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="js/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+        <script src="js/plugin/timer/jquery.timer.js"></script>
+        <!--Estilos para plugin para rango de fechas-->
+        <script src="js/daterangepicker.js"></script>
+        <script src="js/moment.min.js"></script>
+
+    </body>
+</html>

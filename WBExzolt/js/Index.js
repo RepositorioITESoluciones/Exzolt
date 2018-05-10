@@ -2,12 +2,22 @@
 var url;
 var rows;
 var data;
+var nombreParametro = "";
 $(function () {
+    console.log("Hola");
+    $("#divAlias").hide();
     initEventos();
 });
 function initEventos() {
+
+    $("#tableroPuntuacion").click(function () {
+        window.open('tablero.html', '_blank');
+    })
+
+    $('input#radioNo').prop("checked", "checked");
     var inputFile = document.getElementById('avatar');
     inputFile.addEventListener('change', mostrarImagen, false);
+
     $("#divAlias").hide();
     bootsVal();
     $('#radioSi').change(function () {
@@ -31,40 +41,76 @@ function initEventos() {
 
     $('#botonReg').click(function () {
         bootsVal();
-        var nombreParametro = "";
+      
 
         if ($('input#radioSi').is(':checked')) {
-            nombreParametro = $("#alias").val();
+            //$('input#radioNo').prop("checked", false);
+            //$('input#radioSi').prop("checked", "checked");
+            nombreParametro = $(".alias").val();
         } else {
-            nombreParametro = $("#nomnbre").val();
+            //$('input#radioSi').prop("checked", false);
+            //$('input#radioNo').prop("checked", "checked");
+            nombreParametro = $("#nombre").val();
         }
 
         $('#formularioRegistro').data('bootstrapValidator').validate();
         var n = $('#formularioRegistro').data('bootstrapValidator').isValid();
+
         if (n) {
+            $('#botonReg').prop("disabled", true);
+
+            console.log("Lo que trae: " + nombreParametro);
             $.ajax({
                 async: true,
                 type: 'POST',
-                url: 'WSExzolt.asmx/insertarUsuario',
+                url: 'WSExzolt.asmx/verifiaSesion',
                 dataType: 'json',
                 contentType: 'application/json; charset=utf-8',
                 data: '{"nombre": "' + nombreParametro + '"}',
                 success: function (response) {
-                    $.bigBox({
-                        title: "<center><p style='font-size: 20px'>¡Felicidades!</p></center>",
-                        content: "<center><p style='font-size: 20px'>Tu numero de jugador es : <b>" + response.d + "</b> </p></center>",
-                        color: "#739E73",
-                        timeout: "5000",
-                        icon: "fa fa-check"
-                    });
-                    $('#botonReg').prop("disabled", false);
-                    $('#nombre').val('');
-                    $('#alias').val('');
+                    console.log("Respuesta: " + response.d);
+                    $('#formularioRegistro').bootstrapValidator('destroy');
+                    bootsVal();
+                    if (response.d == "true" || response.d == true) {
+                        $.bigBox({
+                            title: "<center><p style='font-size: 20px'>¡Advertencia!</p></center>",
+                            content: "<center><p style='font-size: 20px'>El nombre de jugador <b>" + nombreParametro + "</b> no esta disponible </p></center>",
+                            color: "rgb(199, 145, 33)",
+                            timeout: "3000",
+                            icon: "fa fa-shield fadeInLeft animated",
+                        });
+
+                        $('#botonReg').prop("disabled", false);
+                    } else {
+                        $.ajax({
+                            async: true,
+                            type: 'POST',
+                            url: 'WSExzolt.asmx/insertarUsuario',
+                            dataType: 'json',
+                            contentType: 'application/json; charset=utf-8',
+                            data: '{"nombre": "' + nombreParametro + '"}',
+                            success: function (response) {
+                                $.bigBox({
+                                    title: "<center><p style='font-size: 20px'>¡Felicidades!</p></center>",
+                                    content: "<center><p style='font-size: 20px'>Tu numero de jugador es : <b>" + response.d + "</b> </p></center>",
+                                    color: "#739E73",
+                                    timeout: "3000",
+                                    icon: "fa fa-check"
+                                });
+                                //$('#formularioRegistro')[0].reset();
+                                $('#nombre').val('');
+                                $('#alias').val('');
+                                $('#botonReg').prop("disabled", false);
+                                $("#avatar").val(null);
+                                $("#img1").remove();
+                                $("#sectionImg").append(" <img id='img1' width='50px' height='50px'>");
+                            }
+                        });
+                    }
                 }
             });
         } else {
-            $('#botonReg').prop("disabled", false);
-            bootsVal();
+            //$('#botonReg').prop("disabled", false);
         }
     });
 }
@@ -104,14 +150,24 @@ function showOkMessage(titulo, mensaje) {
         timeout: 4000,
         icon: "fa fa-thumbs-o-up swing animated"
     });
+
 }
 
 function mostrarImagen(event) {
-    var file = event.target.files[0];
+    try {
+        var file = event.target.files[0];
+    }
+    catch (err) {
+    }
     var reader = new FileReader();
     reader.onload = function (event) {
         var img = document.getElementById('img1');
         img.src = event.target.result;
     }
-    reader.readAsDataURL(file);
+    try {
+        reader.readAsDataURL(file);
+    }
+    catch (err) {
+    }
+
 }
