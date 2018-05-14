@@ -5,6 +5,23 @@
 
 }
 
+#labelAvatar{
+    padding: 10px;
+    background: #00938a; 
+    display: table;
+    color: #fff;
+    width: 100% !important;
+}
+
+#avatar {
+    width: 100% !important;
+    display: none !important;
+}
+#foto {
+    width: 100% !important;
+    display: none !important;
+}
+
 /* all */
 ::-webkit-input-placeholder { color:#ffffff; }
 ::-moz-placeholder { color:#ffffff; } /* firefox 19+ */
@@ -18,7 +35,6 @@ input:-moz-placeholder { color:#ffffff; }
 /* individual: mozilla */
 #nombre::-moz-placeholder { color: #ffffff; }
 #alias::-moz-placeholder { color: #ffffff; }
-
 
 .has-error input[type=text], .has-error input[type=text] + .input-group-addon {
         border-color: #ffcd32 !important;
