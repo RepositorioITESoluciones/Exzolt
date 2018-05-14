@@ -52,10 +52,11 @@ public class WSExzolt : System.Web.Services.WebService
      * Inserta Usuario
      */
     [WebMethod]
-    public int insertarUsuario(String nombre) {
+    public int insertarUsuario(String nombre, String foto) {
         try {
             Usuario usr = new Usuario();
             usr.nombre = nombre;
+            usr.foto = foto;
             int respuesta = NegocioUsr.insertaUsuario(usr);
             return respuesta;
         } catch (Exception e) {
@@ -92,6 +93,8 @@ public class WSExzolt : System.Web.Services.WebService
             throw ex;
         }
     }
+
+    public  Boolean actualiza
     #endregion
 
 }

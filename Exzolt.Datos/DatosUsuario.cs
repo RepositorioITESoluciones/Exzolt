@@ -66,8 +66,8 @@ namespace Exzolt.Datos {
          * Inserta Usuario
          */
         public int insertaUsuario(Usuario usuario) {
-            String query = "INSERT INTO usuarios (nombre, nIntentos, score)"
-                         + "VALUES ('" + usuario.nombre + "', 0 , 0) "
+            String query = "INSERT INTO usuarios (nombre, nIntentos, avatar, score)"
+                         + "VALUES ('" + usuario.nombre + "', 0, '" + usuario.foto + "', 0) "
                          + "SELECT idUsuario from usuarios WHERE nombre = '" + usuario.nombre + "'";
             DataTable dt = new DataTable();
             SqlConnection connection = null;
