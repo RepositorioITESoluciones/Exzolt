@@ -5,7 +5,7 @@ namespace Exzolt.Entidades {
         public int id { set; get; }
         
         public String nombre { set; get; }
-
+       
         public int score { set; get; }
     }
 }

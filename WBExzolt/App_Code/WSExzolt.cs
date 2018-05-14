@@ -9,20 +9,27 @@ using System.Collections.Generic;
 public class WSExzolt : System.Web.Services.WebService
 {
     public WSExzolt() { }
+
+    // Clases Instanciadas
     readonly NegocioUsuario NegocioUsr = new NegocioUsuario();
 
+    #region Modulos Usuario
     /*
      * @param id 
      * Valida Sesión
      */
     [WebMethod]
     public String login(int id) {
-        String res;
-        Usuario usr = new Usuario();
-        usr.id = id;
-        usr = NegocioUsr.login(usr);
-        res = (usr != null) ? "Ok" : "No";
-        return res;
+        try {
+            String res;
+            Usuario usr = new Usuario();
+            usr.id = id;
+            usr = NegocioUsr.login(usr);
+            res = (usr != null) ? "Ok" : "No";
+            return res;
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     /*
@@ -31,9 +38,13 @@ public class WSExzolt : System.Web.Services.WebService
      */
     [WebMethod]
     public Boolean verifiaSesion(String nombre) {
-        Boolean verifia;
-        verifia = NegocioUsr.verifiaSesion(nombre);
-        return verifia;
+        try {
+            Boolean verifia;
+            verifia = NegocioUsr.verifiaSesion(nombre);
+            return verifia;
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     /*
@@ -42,10 +53,14 @@ public class WSExzolt : System.Web.Services.WebService
      */
     [WebMethod]
     public int insertarUsuario(String nombre) {
-        Usuario usr = new Usuario();
-        usr.nombre  = nombre;
-        int respuesta = NegocioUsr.insertaUsuario(usr);
-        return respuesta;
+        try {
+            Usuario usr = new Usuario();
+            usr.nombre = nombre;
+            int respuesta = NegocioUsr.insertaUsuario(usr);
+            return respuesta;
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     /*
@@ -53,10 +68,31 @@ public class WSExzolt : System.Web.Services.WebService
      */
     [WebMethod]
     public List<Usuario> tableroPuntaje() {
-        List<Usuario> listUsuario;
-        listUsuario = NegocioUsr.tableroPuntaje();
-        return listUsuario;
+        try {
+            List<Usuario> listUsuario;
+            listUsuario = NegocioUsr.tableroPuntaje();
+            return listUsuario;
+        } catch (Exception e) {
+            throw e;
+        }
     }
+
+    /*
+     * @param idUsuario
+     * @param puntaje
+     * Puntuación
+     */
+    [WebMethod]
+    public Boolean actualizaPuntaje(int idUsuario, int puntaje) {
+        try {
+            Boolean sw;
+            sw = NegocioUsr.actualizaPuntaje(idUsuario, puntaje);
+            return sw;
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
+    #endregion
 
 }
 
