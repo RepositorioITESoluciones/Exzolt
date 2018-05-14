@@ -56,5 +56,11 @@ namespace Exzolt.Negocio {
             return listUsuario;
         }
 
+        public Boolean actualizaPuntaje(int idUsuario, int puntaje) {
+            Boolean sw;
+            sw = DatosUsr.actualizaPuntaje(idUsuario, puntaje);
+            return true;
+        }
+
     }
 }

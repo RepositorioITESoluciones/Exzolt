@@ -6,6 +6,7 @@ using Exzolt.Framework.AccesoDatos;
 using System.Collections.Generic;
 
 namespace Exzolt.Datos {
+
     public class DatosUsuario {
 
         /*
@@ -13,6 +14,7 @@ namespace Exzolt.Datos {
          * Valida Sesión
          */
         public Usuario login(Usuario usuario) {
+            String query = "SELECT * FROM usuarios WHERE idUsuario = " + usuario.id + "";
             Usuario usr = new Usuario();
             DataTable dt = new DataTable();
             SqlConnection connection = null;
@@ -20,7 +22,7 @@ namespace Exzolt.Datos {
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
                     SqlDataReader consulta;
                     connection.Open();
-                    consulta = Ejecuta.ConsultaConRetorno(connection, "SELECT * FROM usuarios WHERE idUsuario = " + usuario.id + "");
+                    consulta = Ejecuta.ConsultaConRetorno(connection, query);
                     dt.Load(consulta);
                     connection.Close();
                 }
@@ -64,8 +66,8 @@ namespace Exzolt.Datos {
          * Inserta Usuario
          */
         public int insertaUsuario(Usuario usuario) {
-            String query = "INSERT INTO usuarios (nombre)"
-                         + "VALUES ('" + usuario.nombre + "') "
+            String query = "INSERT INTO usuarios (nombre, nIntentos, score)"
+                         + "VALUES ('" + usuario.nombre + "', 0 , 0) "
                          + "SELECT idUsuario from usuarios WHERE nombre = '" + usuario.nombre + "'";
             DataTable dt = new DataTable();
             SqlConnection connection = null;
@@ -79,7 +81,7 @@ namespace Exzolt.Datos {
                     connection.Close();
                 }
                 foreach (DataRow row in dt.Rows) {
-                   respuesta = Convert.ToInt32(row["idUsuario"].ToString());
+                    respuesta = Convert.ToInt32(row["idUsuario"].ToString());
                 }
             } catch (Exception ex) {
                 Console.WriteLine(ex);
@@ -95,11 +97,9 @@ namespace Exzolt.Datos {
             List<Usuario> listUsuario = new List<Usuario>();
             DataTable dt = new DataTable();
             SqlConnection connection = null;
-            String query = "SELECT idUsuario, nombre, score " +
-                           "FROM usuarios INNER JOIN puntuaciones " +
-                           "ON usuarios.idPuntuacion = puntuaciones.idPuntuacion"; 
+            String query = "SELECT idUsuario, nombre, score FROM usuarios";
             try {
-                
+
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
                     SqlDataReader consulta;
                     connection.Open();
@@ -109,9 +109,9 @@ namespace Exzolt.Datos {
                 }
                 foreach (DataRow row in dt.Rows) {
                     Usuario usr = new Usuario();
-                    usr.id     = Convert.ToInt32(row["idUsuario"].ToString());
+                    usr.id = Convert.ToInt32(row["idUsuario"].ToString());
                     usr.nombre = row["nombre"].ToString();
-                    usr.score  = Convert.ToInt32(row["score"].ToString());
+                    usr.score = Convert.ToInt32(row["score"].ToString());
                     listUsuario.Add(usr);
                 }
 
@@ -121,5 +121,8 @@ namespace Exzolt.Datos {
             return listUsuario;
         }
 
+        public Boolean actualizaPuntaje(int idUsuario, int puntaje) {
+            return true;
+        }
     }
 }
