@@ -32,7 +32,7 @@ input:-moz-placeholder { color:#ffffff; }
     border-color: #ffffff !important;
 }
 #articleRegistro3 {
-    margin-top: 20% !important;
+    margin-top: 10% !important;
 }
 #divNombre {
      align-content: center !important;
@@ -57,5 +57,7 @@ input:-moz-placeholder { color:#ffffff; }
     border-color: #ffffff !important;
     border-radius: 10px !important;
 }
-
+#tableroPuntuacion{
+    background-color:#02020285!important;
+}
 

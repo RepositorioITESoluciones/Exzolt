@@ -51,9 +51,16 @@
 
 
     <body class="desktop-detected smart-style-0" style="background-image: url('img/fondo-gallina.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
-       
+       <br><br>
+        <div class="row show-grid">
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-2">
+                <a id="tableroPuntuacion" class="btn btn-primary btn-lg">Ver tablero</a>
+            </div>
+        </div>
+
          <div class="row" >
-             
              <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
                  <article id="articleRegistro2"  class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                      <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
@@ -77,8 +84,8 @@
                                      <section class="col col-2 form-group">
                                          <label class="control-label"  style="color:#FFF; font-weight: 900;">Avatar:</label>
                                      </section>
-                                     <section class="col col-2 form-group">
-                                         <img id="img1" width="50px" height="5  0px"><br/>
+                                     <section id="sectionImg" class="col col-2 form-group">
+                                         <img id="img1" width="50px" height="50px">
                                      </section>
                                      <section class="col col-6 form-group">
                                          <input style="background-color:transparent;" onclick="mostrarImagen()" Ingrese al avatar del jugador" type="file" id="avatar" onkeypress="" class="form-control" name="avatar" />
@@ -97,7 +104,7 @@
                                              <span  style="color:#FFF; font-weight: 900;">Si</span>
                                          </label>
                                          <label class="radio">
-                                             <input id="radioNo"  type="radio" checked="true" class="radiobox" name="style-0a">
+                                             <input id="radioNo"  type="radio" class="radiobox" name="style-0a">
                                              <span  style="color:#FFF; font-weight: 900;">No</span>
                                          </label>
                                      </section>
@@ -109,7 +116,7 @@
                                          <label class="control-label" style="color:#FFF; font-weight: 900;">Alias:</label>
                                      </section>
                                      <section class="col col-6 form-group">
-                                         <input style="background-color:transparent; " placeholder="Ingrese el alias del jugador" type="text" id="alias" onkeypress="" class="form-control" name="alias" />
+                                         <input style="background-color:transparent; " placeholder="Ingrese el alias del jugador" type="text" id="alias" onkeypress="" class="form-control alias" name="alias" />
                                      </section>
                                  </div>
 
@@ -121,7 +128,7 @@
                                      </section>
                                  </div>
                              </form>
-                          
+                            
                          </div>
                       
                      </div>
