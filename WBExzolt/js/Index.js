@@ -7,13 +7,21 @@ $(function () {
     console.log("Hola");
     $("#divAlias").hide();
     initEventos();
+
+    
 });
+
+
+$("#foto").click(() => {
+    $('#myModal').modal('show');
+})
+
 function initEventos() {
 
     $("#tableroPuntuacion").click(function () {
         window.open('tablero.html', '_blank');
     })
-
+    $(".close").remove();
     $('input#radioNo').prop("checked", "checked");
     var inputFile = document.getElementById('avatar');
     inputFile.addEventListener('change', mostrarImagen, false);
@@ -39,17 +47,76 @@ function initEventos() {
         }
     })
 
+    $("#foto").click(function () {
+        Webcam.set({
+            // live preview size
+            width: 490,
+            height: 340,
+
+            // device capture size
+            dest_width: 640,
+            dest_height: 480,
+
+            // final cropped size
+            crop_width: 480,
+            crop_height: 480,
+
+            // format and quality
+            image_format: 'jpeg',
+            jpeg_quality: 90,
+
+            // flip horizontal (mirror mode)
+            flip_horiz: true
+        });
+
+        Webcam.attach('#my_camera');
+    })
+
+    $("#btnFoto").click(function () {
+        $(".btnOtra").removeClass('hidden');
+        $(".btnSave").removeClass('hidden');
+        $(".btnFoto").addClass('hidden');
+        Webcam.freeze();
+    })
+
+    $(".btnOtra").click(function () {
+        $(".btnOtra").addClass('hidden');
+        $(".btnSave").addClass('hidden');
+        $(".btnFoto").removeClass('hidden');
+        Webcam.unfreeze();
+    })
+
+    $(".btnSave").click(function () {
+        Webcam.snap(function (data_uri) {
+            $(".btnOtra").addClass('hidden');
+            $(".btnSave").addClass('hidden');
+            $(".btnFoto").removeClass('hidden');
+            $("#img1").attr("src", data_uri);
+            Webcam.reset();
+            //Webcam.unfreeze();
+            Webcam.freeze();
+            try {
+                 
+            }catch(err){
+            }
+            document.getElementById('my_photo_booth').style.display = 'none';
+           
+        });
+    })
+
+    $(".btnCancelar").click(function () {
+        $(".btnOtra").addClass('hidden');
+        $(".btnSave").addClass('hidden');
+        $(".btnFoto").removeClass('hidden');
+        Webcam.unfreeze();
+    })
+
     $('#botonReg').click(function () {
         bootsVal();
-      
 
-        if ($('input#radioSi').is(':checked')) {
-            //$('input#radioNo').prop("checked", false);
-            //$('input#radioSi').prop("checked", "checked");
+        if ($('input#radioSi').is(':checked')) {  
             nombreParametro = $(".alias").val();
         } else {
-            //$('input#radioSi').prop("checked", false);
-            //$('input#radioNo').prop("checked", "checked");
             nombreParametro = $("#nombre").val();
         }
 
@@ -97,7 +164,6 @@ function initEventos() {
                                     timeout: "3000",
                                     icon: "fa fa-check"
                                 });
-                                //$('#formularioRegistro')[0].reset();
                                 $('#nombre').val('');
                                 $('#alias').val('');
                                 $('#botonReg').prop("disabled", false);
@@ -110,7 +176,6 @@ function initEventos() {
                 }
             });
         } else {
-            //$('#botonReg').prop("disabled", false);
         }
     });
 }
@@ -142,6 +207,7 @@ function bootsVal() {
         }
     });
 }
+
 function showOkMessage(titulo, mensaje) {
     $.smallBox({
         title: titulo,
@@ -156,9 +222,7 @@ function showOkMessage(titulo, mensaje) {
 function mostrarImagen(event) {
     try {
         var file = event.target.files[0];
-    }
-    catch (err) {
-    }
+    } catch (err) { }
     var reader = new FileReader();
     reader.onload = function (event) {
         var img = document.getElementById('img1');
@@ -166,8 +230,6 @@ function mostrarImagen(event) {
     }
     try {
         reader.readAsDataURL(file);
-    }
-    catch (err) {
-    }
+    } catch (err) { }
 
 }

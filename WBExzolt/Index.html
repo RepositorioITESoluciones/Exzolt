@@ -2,56 +2,37 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/registro.css">
         <meta charset="utf-8">
-
         <meta name="description" content="">
         <meta name="author" content="">
         <meta http-equiv="pragma" content="no-cache" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/demo.min.css" rel="stylesheet" />
-        <link href="css/invoice.min.css" rel="stylesheet" />
-        <link href="css/lockscreen.min.css" rel="stylesheet" />
+        <link href="css/your_style.css" rel="stylesheet" />
         <link href="css/smartadmin-production-plugins.min.css" rel="stylesheet" />
         <link href="css/smartadmin-production.min.css" rel="stylesheet" />
         <link href="css/smartadmin-rtl.min.css" rel="stylesheet" />
         <link href="css/smartadmin-skins.min.css" rel="stylesheet" />
-        <link href="css/your_style.css" rel="stylesheet" />
-        <link href="css/fuelux.min.css" rel="stylesheet" />
-        <link href="css/select2/select2.min.css" rel="stylesheet" />
         <link href="js/plugin/datatables/jquery.dataTables.min.css" rel="stylesheet" />
-        <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
-        <link href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-        <link href="css/general.css" rel="stylesheet" />
-        <link href="js/daterangepicker.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
         <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
-        <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-        <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-        <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-        <script src="js/amcharts.js"></script>
-        <script src="js/serial.js"></script>
-        <script src="js/export.min.js"></script>
-        <link rel="stylesheet" href="js/export.css" type="text/css" media="all" />
-        <script src="js/light.js"></script>
-        <script src="js/fabric.min.js"></script>
-        <script src="js/FileSaver.min.js"></script>
-        <title>Exzolt</title>
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheets" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>  
-    </head>   
+        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+        <script src="js/plugin/webcam.js"></script>
+        <script src="js/plugin/webcam.min.js"></script>
+        <title>Exzolt</title>
+    </head>
 
-
-    <body class="desktop-detected smart-style-0" style="background-image: url('img/fondo-gallina.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
-       <br><br>
+    <body class="desktop-detected smart-style-0" style="background-image: url('img/fondo-registro.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="row show-grid">
             <div class="col-md-10">
             </div>
@@ -60,246 +41,234 @@
             </div>
         </div>
 
-         <div class="row" >
-             <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
-                 <article id="articleRegistro2"  class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                     <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                         <header id="headerReg">
-                             <center><h2  style="color:#FFF; font-weight: 900;"><i class="icon-prepend  icon-edit"></i><strong>Registro<label id="Title"></label></strong></h2></center>
-                         </header>
+        <div class="row">
+            <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
+            <article id="articleRegistro2" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div id="articleRegistro3" class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                    <header id="headerReg">
+                        <center>
+                            <h2 style="color:#FFF; font-weight: 900;"><i class="icon-prepend  icon-edit"></i><strong>Registro<label id="Title"></label></strong></h2>
+                        </center>
+                    </header>
 
-                         <div class="widget-body" style="padding-bottom: 0px" id="divReg">
-                             <form id="formularioRegistro" class="smart-form">
-                                 <div id="divNombre" class="row" style="margin-top: 10px">
-                                    <section class="col col-1 form-group"></section>
-                                    <section class="col col-4 form-group">
-                                        <label class="control-label" style="color:#FFF; font-weight: 900;">Nombre:</label>
-                                    </section>
-                                    <section id="idSeccionNombre" class="col col-6 form-group">
-                                        <input style="background-color:transparent; "  placeholder="Ingrese el nombre del jugador" type="text" id="nombre" onkeypress="" class="form-control" name="nombre" />
-                                    </section>
-                                </div>
-                                 <div class="row" style="margin-top: 10px">
-                                     <section class="col col-1 form-group"></section>
-                                     <section class="col col-2 form-group">
-                                         <label class="control-label"  style="color:#FFF; font-weight: 900;">Avatar:</label>
-                                     </section>
-                                     <section id="sectionImg" class="col col-2 form-group">
-                                         <img id="img1" width="50px" height="50px">
-                                     </section>
-                                     <section class="col col-6 form-group">
-                                         <input style="background-color:transparent;" onclick="mostrarImagen()" Ingrese al avatar del jugador" type="file" id="avatar" onkeypress="" class="form-control" name="avatar" />
-                                     </section>
-                                 </div>
-                              
-                                 <div class="row" style="margin-top: 10px">
-                                     <section class="col col-1 form-group"></section>
-                                     <section class="col col-4 form-group">
-                                         <label class="control-label"  style="color:#FFF; font-weight: 900;">¿Quieres un alias?:</label></br>
-                                        <p style="color:#FFF;"> (Se mostrará como nombre del jugador)</p>
-                                     </section>
-                                     <section class="col col-6 form-group">
-                                         <label class="radio">
-                                             <input  id="radioSi" type="radio" class="radiobox" name="style-0a">
-                                             <span  style="color:#FFF; font-weight: 900;">Si</span>
-                                         </label>
-                                         <label class="radio">
-                                             <input id="radioNo"  type="radio" class="radiobox" name="style-0a">
-                                             <span  style="color:#FFF; font-weight: 900;">No</span>
-                                         </label>
-                                     </section>
-                                 </div>
+                    <div class="widget-body" style="padding-bottom: 0px" id="divReg">
+                        <form id="formularioRegistro" class="smart-form">
+                            <div id="divNombre" class="row" style="margin-top: 10px">
+                                <section class="col col-1 form-group"></section>
+                                <section class="col col-4 form-group">
+                                    <label class="control-label" style="color:#FFF; font-weight: 900;">Nombre:</label>
+                                </section>
+                                <section id="idSeccionNombre" class="col col-6 form-group">
+                                    <input style="background-color:transparent; " placeholder="Ingrese el nombre del jugador" type="text" id="nombre" onkeypress="" class="form-control" name="nombre" />
+                                </section>
+                            </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-1 form-group"></section>
+                                <section class="col col-2 form-group">
+                                    <label class="control-label" style="color:#FFF; font-weight: 900;">Avatar:</label>
+                                </section>
+                                <section id="sectionImg" class="col col-2 form-group">
+                                    <img id="img1" width="50px" height="50px">
+                                </section>
+                                <section class="col col-3 form-group">
+                                    <label id="labelAvatar">
+                                        Seleccionar avatar
+                                        <input type="file" id="avatar" class="btn btn-default" name="avatar">
+                                    </label>
+                                </section>
+                                <section class="col col-3 form-group">
+                                    <label id="labelAvatar">
+                                        Tomar una foto
+                                        <input type="button" id="foto" class="btn btn-default" name="foto ">
+                                    </label>
+                                </section>
+                            </div>
 
-                                 <div id="divAlias">
-                                     <section class="col col-1 form-group"></section>
-                                     <section class="col col-4 form-group">
-                                         <label class="control-label" style="color:#FFF; font-weight: 900;">Alias:</label>
-                                     </section>
-                                     <section class="col col-6 form-group">
-                                         <input style="background-color:transparent; " placeholder="Ingrese el alias del jugador" type="text" id="alias" onkeypress="" class="form-control alias" name="alias" />
-                                     </section>
-                                 </div>
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-1 form-group"></section>
+                                <section class="col col-4 form-group">
+                                    <label class="control-label" style="color:#FFF; font-weight: 900;">¿Quieres un alias?:</label>
+                                    </br>
+                                    <p style="color:#FFF;"> (Se mostrará como nombre del jugador)</p>
+                                </section>
+                                <section class="col col-6 form-group">
+                                    <label class="radio">
+                                        <input id="radioSi" type="radio" class="radiobox" name="style-0a">
+                                        <span style="color:#FFF; font-weight: 900;">Si</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input id="radioNo" type="radio" class="radiobox" name="style-0a">
+                                        <span style="color:#FFF; font-weight: 900;">No</span>
+                                    </label>
+                                </section>
+                            </div>
 
-                                 <div class="row" style="margin-top: 10px">
-                                     <section class="col col-5 form-group"></section>
-                                   
-                                     <section class="col col-2 form-group">
-                                         <button id="botonReg" class="btn btn-info btn-sm" onclick='return false;' >Registrar</button>
-                                     </section>
-                                 </div>
-                             </form>
-                            
-                         </div>
-                      
-                     </div>
-                 </article>
+                            <div id="divAlias">
+                                <section class="col col-1 form-group"></section>
+                                <section class="col col-4 form-group">
+                                    <label class="control-label" style="color:#FFF; font-weight: 900;">Alias:</label>
+                                </section>
+                                <section class="col col-6 form-group">
+                                    <input style="background-color:transparent; " placeholder="Ingrese el alias del jugador" type="text" id="alias" onkeypress="" class="form-control alias" name="alias" />
+                                </section>
+                            </div>
+
+                            <div class="row" style="margin-top: 10px">
+                                <section class="col col-5 form-group"></section>
+
+                                <section class="col col-2 form-group">
+                                    <button id="botonReg" class="btn btn-info btn-sm" onclick='return false;'>Registrar</button>
+                                </section>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Chinito puto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <section class="col col-sm-2"></section>
+                            <section class="col col-sm-5">
+                                <div id="my_photo_booth">
+                                    <div id="my_camera"></div>
+
+                                </div>  
+                            </section>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button id="btnFoto" class="btn btn-success pull-rigth btnFoto" >
+                            Tomar foto <i class="fa fa-lg fa-fw fa-chevron-circle-down"></i>
+                        </button>
+
+                        <button id="btnCancelar" class="btn btn-danger pull-rigth btnCancelar" data-dismiss="modal">
+                            Cancelar <i class="fa fa-lg fa-fw fa-chevron-circle-down "></i>
+                        </button>
+
+                        <button id="btnOtra " class="btn btn-danger hidden pull-rigth btnOtra">
+                            Tomar otra <i class="fa fa-lg fa-fw fa-chevron-circle-down "></i>
+                        </button>
+
+                        <button id="btnSave" data-dismiss="modal" class="btn btn-danger hidden pull-rigth btnSave">
+                            Guardar foto <i class="fa fa-lg fa-fw fa-chevron-circle-down "></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-        <script src="js/index.js"></script>
+        </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/index.js "></script>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
         <script>
-        if (!window.jQuery) {
-            document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-        }
+            if (!window.jQuery) {
+                document.write('<script src="js/libs/jquery-2.1.1.min.js "><\/script>');
+            }
         </script>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js "></script>
         <script>
-        if (!window.jQuery.ui) {
-            document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-        }
+            if (!window.jQuery.ui) {
+                document.write('<script src="js/libs/jquery-ui-1.10.3.min.js "><\/script>');
+            }
         </script>
 
         <!-- IMPORTANT: APP CONFIG -->
-        <script src="js/app.config.js"></script>
+        <script src="js/app.config.js "></script>
 
         <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-        <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js "></script>
 
         <!-- BOOTSTRAP JS -->
-        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js "></script>
 
         <!-- CUSTOM NOTIFICATION -->
-        <script src="js/notification/SmartNotification.min.js"></script>
-
-        <!-- JARVIS WIDGETS -->
-        <script src="js/smartwidgets/jarvis.widget.min.js"></script>
-
-        <!-- EASY PIE CHARTS -->
-        <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
-        <!-- SPARKLINES -->
-        <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
-
-        <!-- JQUERY MASKED INPUT -->
-        <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
-
-        <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
-        <!-- JQUERY SELECT2 INPUT -->
-
-        <script src="js/plugin/select2/select2.js"></script>
-
-        <!-- JQUERY SELECT2 INPUT   <script src="js/plugin/select2/select2.js"></script>-->
-
-
-        <script src="js/plugin/select2/select2.min.js"></script>
-
-
+        <script src="js/notification/SmartNotification.min.js "></script>
 
         <!-- JQUERY UI + Bootstrap Slider -->
-        <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+        <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js "></script>
 
         <!-- browser msie issue fix -->
-        <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+        <script src="js/plugin/msie-fix/jquery.mb.browser.min.js "></script>
 
         <!-- FastClick: For mobile devices: you can disable this in app.js -->
-        <script src="js/plugin/fastclick/fastclick.min.js"></script>
+        <script src="js/plugin/fastclick/fastclick.min.js "></script>
 
-        <!--[if IE 8]>
-        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-        <![endif]-->
-        <!-- Demo purpose only -->
-        <script src="js/demo.min.js"></script>
+   
+        <script src="js/demo.min.js "></script>
 
         <!-- MAIN APP JS FILE -->
-        <script src="js/app.min.js"></script>
+        <script src="js/app.min.js "></script>
 
 
-        <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-        <!-- Voice command : plugin -->
-        <script src="js/speech/voicecommand.min.js"></script>
+        <!--<script language="JavaScript ">
 
-        <!-- SmartChat UI : plugin -->
-        <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
-        <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+        function preview_snapshot() {
+            alert("entra ");
+            $("#btnOtra ").removeClass('hidden');
+            $("#btnSave ").removeClass('hidden');
+            $("#btnFoto ").addClass('hidden');
 
+            Webcam.freeze();
 
-        <script src="js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-        <script src="js/plugin/fuelux/wizard/wizard.min.js"></script>
+          }
 
+          function cancel_preview() {
 
-        <!-- Your GOOGLE ANALYTICS CODE Below -->
-        <script type="text/javascript">
+              Webcam.unfreeze();
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-        _gaq.push(['_trackPageview']);
+              $("#btnOtra ").addClass('hidden');
+              $("#btnSave ").addClass('hidden');
+              $("#btnFoto ").removeClass('hidden');
 
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+          }
 
+          function save_photo() {
 
-        $(document).ready(onReady);
+              Webcam.snap(function (data_uri) {
 
-        function setTheme() {
-            $('#smart-style-0').click(function () {
-                localStorage.setItem("skin", "smart-style-0");
-            });
+                  document.getElementById('results').innerHTML =
+                      '<h2>Here is your large, cropped image:</h2>' +
+                      '<img src=" '+data_uri+' "/><br/></br>' +
+                      '<a href=" '+data_uri+' " target="_blank ">Open image in new window...</a>';
 
-            $('#smart-style-1').click(function () {
-                localStorage.setItem("skin", "smart-style-1");
-            });
-
-            $('#smart-style-2').click(function () {
-                localStorage.setItem("skin", "smart-style-2");
-            });
-
-            $('#smart-style-3').click(function () {
-                localStorage.setItem("skin", "smart-style-3");
-            });
-
-            $('#smart-style-4').click(function () {
-                localStorage.setItem("skin", "smart-style-4");
-            });
-
-            $('#smart-style-5').click(function () {
-                localStorage.setItem("skin", "smart-style-5");
-            });
-
-            $('#smart-style-6').click(function () {
-                localStorage.setItem("skin", "smart-style-6");
-            });
-
-        }
-
-
-        function onReady() {
-            setTheme();
-        }
-
-        </script>
-
+                  Webcam.reset();
+                  document.getElementById('results').style.display = '';
+                  document.getElementById('my_photo_booth').style.display = 'none';
+              } );
+          }
+          </script>-->
         <!-- DataTables -->
-        <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
-        <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
-        <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
-        <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
-        <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
-        <script src="js/plugin/datatables/dataTableDefaults.js"></script>
-
-        <script src="js/plugin/datatables/extensions/Buttons/js/dataTables.buttons.js"></script>
-        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.flash.min.js"></script>
-        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
-        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.print.min.js"></script>
-        <script src="js/plugin/datatables/extensions/Buttons/js/jszip.min.js"></script>
-        <script src="js/plugin/datatables/extensions/Buttons/js/pdfmake.min.js"></script>
-        <script src="js/plugin/datatables/extensions/Buttons/js/vfs_fonts.js"></script>
-
-        <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
-        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
-        <script src="js/pagination-tda-pluging.js"></script>
-        <script src="js/plugin/moment/moment.min.js"></script>
-        <script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-        <script src="js/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
-        <script src="js/plugin/timer/jquery.timer.js"></script>
-        <!--Estilos para plugin para rango de fechas-->
-        <script src="js/daterangepicker.js"></script>
-        <script src="js/moment.min.js"></script>
-
+        <script src="js/plugin/datatables/jquery.dataTables.min.js "></script>
+        <script src="js/plugin/datatables/dataTables.colVis.min.js "></script>
+        <script src="js/plugin/datatables/dataTables.tableTools.min.js "></script>
+        <script src="js/plugin/datatables/dataTables.bootstrap.min.js "></script>
+        <script src="js/plugin/datatable-responsive/datatables.responsive.min.js "></script>
+        <script src="js/plugin/datatables/dataTableDefaults.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/dataTables.buttons.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.flash.min.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.html5.min.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/buttons.print.min.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/jszip.min.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/pdfmake.min.js "></script>
+        <script src="js/plugin/datatables/extensions/Buttons/js/vfs_fonts.js "></script>
+        <script src="js/plugin/jquery-validate/jquery.validate.min.js "></script>
+        <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js "></script>
+        <script src="js/pagination-tda-pluging.js "></script>
+ 
 
     </body>
 </html>
