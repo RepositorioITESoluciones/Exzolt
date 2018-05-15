@@ -122,8 +122,24 @@ namespace Exzolt.Datos {
             return listUsuario;
         }
 
-        public Boolean actualizaPuntaje(int idUsuario, int nIntentos, int puntaje) {
-            return true;
+        public Boolean puntajeGallina(int idUsuario, int gallina, int puntaje) {
+            String query = "";
+            DataTable dt = new DataTable();
+            SqlConnection connection = null;
+            Boolean verifica = false;
+            try {
+                using (connection = Conexion.ObtieneConexion("ConexionBD")) {
+                    SqlDataReader consulta;
+                    connection.Open();
+                    consulta = Ejecuta.ConsultaConRetorno(connection, query);
+                    dt.Load(consulta);
+                    connection.Close();
+                }
+                verifica = true;
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+            return verifica;
         }
     }
 }

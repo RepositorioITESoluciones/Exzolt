@@ -84,10 +84,10 @@ public class WSExzolt : System.Web.Services.WebService
      * Puntuación
      */
     [WebMethod]
-    public Boolean actualizaPuntaje(int idUsuario, int nIntentos, int score) {
+    public Boolean puntajeGallina(int idUsuario, int gallina, int score) {
         try {
             Boolean sw;
-            sw = NegocioUsr.actualizaPuntaje(idUsuario, nIntentos, score);
+            sw = NegocioUsr.puntajeGallina(idUsuario, gallina, score);
             return sw;
         } catch (Exception ex) {
             throw ex;
