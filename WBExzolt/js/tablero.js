@@ -37,7 +37,7 @@ function initDataTable() {
             $('#loadingMod').modal('hide');
             $.each(response, function(row, index){
                 $.each(index, function (r, arr) {
-                    datos.push([arr.nombre, arr.score]);
+                    datos.push([arr.nombre, arr.nIntentos, arr.score]);
                 });
             });
         }
@@ -75,10 +75,12 @@ function initDataTable() {
         },
         data: datos,
         columns: [{
-            title: "nombre",
+            title: "Jugador",
             visible: true
         }, {
-            title: "score"
+            title: "Intentos"
+        }, {
+            title: "Puntuación"
         }]
     });
 
@@ -134,7 +136,7 @@ function cargarTabla() {
 
             $.each(response, function (row, index) {
                 $.each(index, function (r, arr) {
-                    datos.push([arr.nombre, arr.score]);
+                    datos.push([arr.nombre, arr.nIntentos, arr.score]);
                 });
             });
         }

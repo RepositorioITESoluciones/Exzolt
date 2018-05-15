@@ -97,7 +97,7 @@ namespace Exzolt.Datos {
             List<Usuario> listUsuario = new List<Usuario>();
             DataTable dt = new DataTable();
             SqlConnection connection = null;
-            String query = "SELECT idUsuario, nombre, score FROM usuarios";
+            String query = "SELECT idUsuario, nombre, nIntentos, score FROM usuarios";
             try {
 
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
@@ -111,6 +111,7 @@ namespace Exzolt.Datos {
                     Usuario usr = new Usuario();
                     usr.id = Convert.ToInt32(row["idUsuario"].ToString());
                     usr.nombre = row["nombre"].ToString();
+                    usr.nIntentos = Convert.ToInt32(row["nIntentos"].ToString());
                     usr.score = Convert.ToInt32(row["score"].ToString());
                     listUsuario.Add(usr);
                 }
@@ -121,7 +122,7 @@ namespace Exzolt.Datos {
             return listUsuario;
         }
 
-        public Boolean actualizaPuntaje(int idUsuario, int puntaje) {
+        public Boolean actualizaPuntaje(int idUsuario, int nIntentos, int puntaje) {
             return true;
         }
     }
