@@ -80,21 +80,21 @@ public class WSExzolt : System.Web.Services.WebService
 
     /*
      * @param idUsuario
-     * @param puntaje
+     * @param score
      * Puntuación
      */
     [WebMethod]
-    public Boolean actualizaPuntaje(int idUsuario, int puntaje) {
+    public Boolean actualizaPuntaje(int idUsuario, int nIntentos, int score) {
         try {
             Boolean sw;
-            sw = NegocioUsr.actualizaPuntaje(idUsuario, puntaje);
+            sw = NegocioUsr.actualizaPuntaje(idUsuario, nIntentos, score);
             return sw;
         } catch (Exception ex) {
             throw ex;
         }
     }
 
-    public  Boolean actualiza
+
     #endregion
 
 }
