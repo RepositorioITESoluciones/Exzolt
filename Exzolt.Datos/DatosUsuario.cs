@@ -97,7 +97,7 @@ namespace Exzolt.Datos {
             List<Usuario> listUsuario = new List<Usuario>();
             DataTable dt = new DataTable();
             SqlConnection connection = null;
-            String query = "SELECT idUsuario, nombre, nIntentos, score FROM usuarios";
+            String query = "SELECT idUsuario, nombre, nIntentos, score,avatar,gallina,acaro FROM usuarios";
             try {
 
                 using (connection = Conexion.ObtieneConexion("ConexionBD")) {
@@ -112,7 +112,10 @@ namespace Exzolt.Datos {
                     usr.id = Convert.ToInt32(row["idUsuario"].ToString());
                     usr.nombre = row["nombre"].ToString();
                     usr.nIntentos = Convert.ToInt32(row["nIntentos"].ToString());
+                    usr.gallina = Convert.ToInt32(row["gallina"].ToString());
+                    usr.acaro = Convert.ToInt32(row["acaro"].ToString());
                     usr.score = Convert.ToInt32(row["score"].ToString());
+                    usr.foto = row["avatar"].ToString();
                     listUsuario.Add(usr);
                 }
 
@@ -122,8 +125,17 @@ namespace Exzolt.Datos {
             return listUsuario;
         }
 
-        public Boolean puntajeGallina(int idUsuario, int gallina, int puntaje) {
+        public Boolean puntajeScore(int idUsuario, int bandera, int puntaje) {
             String query = "";
+
+            if (bandera == 1) {
+                 query = "UPDATE usuarios SET score = score - " + puntaje + ", "
+                           + "gallina = gallina + 1 WHERE idUsuario =  " + idUsuario + "";
+            } else {
+                 query = "UPDATE usuarios SET score = score + " + puntaje + ", "
+                          + "acaro = acaro + 1 WHERE idUsuario =  " + idUsuario + "";
+            }
+
             DataTable dt = new DataTable();
             SqlConnection connection = null;
             Boolean verifica = false;
@@ -141,5 +153,34 @@ namespace Exzolt.Datos {
             }
             return verifica;
         }
+
+        public Boolean numeroIntentos(int idUsuario){
+            String query = "";
+            query = "UPDATE usuarios SET nIntentos = nIntentos + 1"
+                    + "WHERE idUsuario = " + idUsuario + " ";
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = null;
+            Boolean verifica = false;
+            try
+            {
+                using (connection = Conexion.ObtieneConexion("ConexionBD"))
+                {
+                    SqlDataReader consulta;
+                    connection.Open();
+                    consulta = Ejecuta.ConsultaConRetorno(connection, query);
+                    dt.Load(consulta);
+                    connection.Close();
+                }
+                verifica = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return verifica;
+        }
+
+
     }
 }

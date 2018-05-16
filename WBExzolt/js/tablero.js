@@ -9,8 +9,36 @@ $(function () {
     
 });
 function initEventos() {
-    initDataTable();
-    setInterval(cargarTabla, 2000);
+
+    $.ajax({
+        async: false,
+        type: 'POST',
+        url: 'WSExzolt.asmx/tableroPuntaje',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function (data) {
+            console.log(data.d);
+            //if (data.respuesta == exito) {
+                var filas = data.d.length;
+
+                for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
+                    var nuevafila = "<tr class='trstyle'><td>" +
+                    "<img style='width:100%' src='"+data.d[i].foto+"'/>" +"</td><td>" +
+                    data.d[i].nombre + "</td><br><br><td>" +
+                    data.d[i].gallina + "</td><td>" +
+                     data.d[i].nIntentos + "</td><td>" +
+                    data.d[i].acaro + "</td><td>" +
+                    data.d[i].score + "</td></tr>"
+
+                    $("#tbodyTabla").append(nuevafila)
+                }
+            //}
+        }
+    });
+
+
+    //initDataTable();
+    //setInterval(cargarTabla, 2000);
 }
 
 function initDataTable() {
@@ -118,30 +146,29 @@ function initDataTable() {
 
 //Funcion encargada de refrescar la tabla despues de haber creado, editado o eliminado un regustro
 function cargarTabla() {
-    var datos = [];
+    $("#tbodyTabla").empty();
     $.ajax({
         async: false,
         type: 'POST',
         url: 'WSExzolt.asmx/tableroPuntaje',
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
-        beforeSend: function () {
-            $('#loadingMod').modal({
-                backdrop: 'static',
-                keyboard: false
-            });
-        },
-        success: function (response) {
-            $('#loadingMod').modal('hide');
+        success: function (data) {
+            console.log(data.d);
+            //if (data.respuesta == exito) {
+            var filas = data.d.length;
 
-            $.each(response, function (row, index) {
-                $.each(index, function (r, arr) {
-                    datos.push([arr.nombre, arr.nIntentos, arr.score]);
-                });
-            });
+            for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
+                var nuevafila = "<tr><td>" +
+                data.d[i].foto + "</td><td>" +
+                data.d[i].nombre + "</td><td>" +
+                data.d[i].gallina + "</td><td>" +
+                data.d[i].acaro + "</td><td>" +
+                data.d[i].score + "</td></tr>"
+
+                $("#TablaPuntaje").append(nuevafila)
+            }
+            //}
         }
     });
-    otable.clear();
-    otable.rows.add(datos);
-    otable.draw();
 }

@@ -1,4 +1,76 @@
-﻿<html>
+﻿<style>
+        table.scroll tbody, table.scroll thead tr {
+            display: block;
+        }
+
+        table.scroll tbody {
+            height: 300px;
+            overflow-y: initial;
+            overflow-x: hidden;
+            text-align: center;
+            overflow-y: no-content;
+            margin-top: 15px;
+            border: 1px  #FFF !important;
+        }
+
+            table.scroll tbody::-webkit-scrollbar {
+                width: 10px;
+                background: #021b79;
+            }
+
+            table.scroll tbody::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,.2);
+                border-radius: 10px;
+                border-right: 2px solid #021b79;
+            }
+
+            table.scroll tbody td,
+            table.scroll thead th {
+                width: 140px;
+                /*border-right: 1px solid black;*/
+            }
+
+                table.scroll thead th:last-child {
+                    width: 156px;
+                    / 140px + 16px scrollbar width /;
+                }
+
+        thead tr th {
+            height: 100%;
+            line-height: 30px;
+            /*background-color: #000453;*/
+            color: #000;
+            text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;
+            text-align: center;
+            padding: 10px;
+            border-radius: 50px 20px;
+            border-color: #00e0ff;
+        }
+
+        .trstyle {
+            /*border: 2px solid ;
+    border-color:#00e0ff;*/
+            border: 3px solid #01E2FF;
+            background-color: #000453;
+            color: #FFF;
+            /*text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;*/
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+        }
+tr td:first-child { border-top-left-radius: 10px; }
+tr td:first-child { border-bottom-left-radius: 10px; }
+tr td:last-child { border-top-right-radius: 10px; }
+tr td:last-child { border-bottom-right-radius: 10px; }
+tr td { border-top-style: solid; }
+tr td { border-left-style: solid; }
+
+table#TablaPuntaje tbody td {
+    border: none !important;
+}
+
+</style>
+<html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/registro.css">
     <meta charset="utf-8">
@@ -57,22 +129,19 @@
              <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
                  <article id="articleRegistro2"  class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                      <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                         <div class="widget-body">
-                             <table id="TablaPuntaje" class="table table-striped table-bordered table-hover DTTT_selectable" cellspacing="0" width="100%">
+                         <div class="widget-body table-responsive" style="margin-top:25%; background-color:transparent !important; border-radius:15px !important; border-color:#03b5f8 !important">
+                             <table id="TablaPuntaje" class="scroll" width="100%">
                                  <thead>
-                                     <tr>
-                                         <th class="hasinput" style="width:5%">
 
-                                         </th>
-                                         <th class="hasinput" style="width:5%">
-                                            
-                                         </th>
-                                     </tr>
                                      <tr>
-                                         <th data-class="expand">Nombre</th>
+                                         <th data-class="expand">Foto</th>
+                                         <th>Nombre</th>
+                                         <th data-class="expand">Gallina</th>
+                                         <th>Acaro</th>
                                          <th>Score</th>
                                      </tr>
                                  </thead>
+                                 <tbody id="tbodyTabla"></tbody>
                              </table>
                          </div>
                       
