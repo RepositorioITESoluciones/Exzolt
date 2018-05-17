@@ -1,80 +1,9 @@
-﻿<style>
-        table.scroll tbody, table.scroll thead tr {
-            display: block;
-        }
-
-        table.scroll tbody {
-            height: 300px;
-            overflow-y: initial;
-            overflow-x: hidden;
-            text-align: center;
-            overflow-y: no-content;
-            margin-top: 15px;
-            border: 1px  #FFF !important;
-        }
-
-            table.scroll tbody::-webkit-scrollbar {
-                width: 10px;
-                background: #021b79;
-            }
-
-            table.scroll tbody::-webkit-scrollbar-thumb {
-                background: rgba(255,255,255,.2);
-                border-radius: 10px;
-                border-right: 2px solid #021b79;
-            }
-
-            table.scroll tbody td,
-            table.scroll thead th {
-                width: 140px;
-                /*border-right: 1px solid black;*/
-            }
-
-                table.scroll thead th:last-child {
-                    width: 156px;
-                    / 140px + 16px scrollbar width /;
-                }
-
-        thead tr th {
-            height: 100%;
-            line-height: 30px;
-            /*background-color: #000453;*/
-            color: #000;
-            text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;
-            text-align: center;
-            padding: 10px;
-            border-radius: 50px 20px;
-            border-color: #00e0ff;
-        }
-
-        .trstyle {
-            /*border: 2px solid ;
-    border-color:#00e0ff;*/
-            border: 3px solid #01E2FF;
-            background-color: #000453;
-            color: #FFF;
-            /*text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;*/
-            text-align: center;
-            padding: 10px;
-            border-radius: 15px;
-        }
-tr td:first-child { border-top-left-radius: 10px; }
-tr td:first-child { border-bottom-left-radius: 10px; }
-tr td:last-child { border-top-right-radius: 10px; }
-tr td:last-child { border-bottom-right-radius: 10px; }
-tr td { border-top-style: solid; }
-tr td { border-left-style: solid; }
-
-table#TablaPuntaje tbody td {
-    border: none !important;
-}
-
-</style>
-<html>
+﻿<html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/registro.css">
     <meta charset="utf-8">
-
+    <link href="https://fonts.googleapis.com/css?family=Wallpoet" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta http-equiv="pragma" content="no-cache" />
@@ -119,6 +48,77 @@ table#TablaPuntaje tbody td {
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+
+
+    <style>
+            body {
+                font-family: 'Wallpoet', cursive !important;
+            }
+
+            #articleRegistro3 {
+                margin-top: -8% !important;
+            }
+
+            thead tr th {
+                font-family: 'Press Start 2P', cursive !important;
+                font-size: 14px !important;
+                height: 100%;
+                line-height: 30px;
+                /*background-color: #000453;*/
+                color: #000;
+                text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;
+                text-align: center;
+                padding: 10px;
+                border-radius: 50px 20px;
+                border-color: #00e0ff;
+            }
+
+            .trstyle {
+                /*border: 2px solid ;
+        border-color:#00e0ff;*/
+                border: 3px solid #01E2FF !important;
+                background-color: #000453;
+                color: #FFF;
+                /*text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;*/
+                text-align: center;
+                padding: 10px;
+                border-radius: 15px;
+            }
+
+            tr td:last-child {
+                border-top-right-radius: 20px;
+            }
+
+            tr td:last-child {
+                border-bottom-right-radius: 20px;
+            }
+
+            table#TablaPuntaje tbody td {
+                border-top: 2px solid #01E2FF;
+                border-bottom: 2px solid #01E2FF;
+                border-right: none;
+                border-left: none;
+
+            }
+
+                table#TablaPuntaje tbody td:first-child {
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    border-left: 2px solid #01E2FF;
+                    border-right: 2px solid #01E2FF;
+                    border-collapse: separate !important;
+                    border-spacing: 5px 10px !important;
+                }
+
+                table#TablaPuntaje tbody td:last-child {
+                    border-right: 2px solid #01E2FF;
+                }
+
+            #TablaPuntaje {
+                border-collapse: separate;
+                border-spacing: 0px 5px;
+            }
+    </style>
 </head>
  
 
@@ -126,18 +126,18 @@ table#TablaPuntaje tbody td {
     <body class="desktop-detected smart-style-0" style="background-image: url('img/fondo-registro.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
 
          <div class="row" >
-             <article id="articleRegistro" class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></article>
-                 <article id="articleRegistro2"  class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+             <article id="articleRegistro" class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></article>
+                 <article id="articleRegistro2"  class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                      <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                         <div class="widget-body table-responsive" style="margin-top:25%; background-color:transparent !important; border-radius:15px !important; border-color:#03b5f8 !important">
-                             <table id="TablaPuntaje" class="scroll" width="100%">
+                         <div class="widget-body table-responsive" style="margin-top:25%; background-color:transparent !important; border: none">
+                             <table id="TablaPuntaje" class="" width="100%">
                                  <thead>
-
                                      <tr>
                                          <th data-class="expand">Foto</th>
                                          <th>Nombre</th>
-                                         <th data-class="expand">Gallina</th>
                                          <th>Acaro</th>
+                                         <th >Gallina</th>
+                                         <th>Intentos</th>
                                          <th>Score</th>
                                      </tr>
                                  </thead>

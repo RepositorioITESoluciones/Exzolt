@@ -10,6 +10,8 @@ $(function () {
 });
 function initEventos() {
 
+ 
+
     $.ajax({
         async: false,
         type: 'POST',
@@ -18,21 +20,17 @@ function initEventos() {
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
             console.log(data.d);
-            //if (data.respuesta == exito) {
                 var filas = data.d.length;
-
                 for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
                     var nuevafila = "<tr class='trstyle'><td>" +
-                    "<img style='width:100%' src='"+data.d[i].foto+"'/>" +"</td><td>" +
+                    "<img style='width:35%; height:8%;' src='" + data.d[i].foto + "'/>" + "</td><td>" +
                     data.d[i].nombre + "</td><br><br><td>" +
-                    data.d[i].gallina + "</td><td>" +
-                     data.d[i].nIntentos + "</td><td>" +
                     data.d[i].acaro + "</td><td>" +
+                     data.d[i].gallina + "</td><td>" +
+                    data.d[i].nIntentos + "</td><td>" +
                     data.d[i].score + "</td></tr>"
-
                     $("#tbodyTabla").append(nuevafila)
                 }
-            //}
         }
     });
 
