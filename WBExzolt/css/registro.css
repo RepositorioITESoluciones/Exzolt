@@ -48,7 +48,7 @@ input:-moz-placeholder { color:#ffffff; }
     border-color: #ffffff !important;
 }
 #articleRegistro3 {
-    margin-top: 10%;
+    margin-top: 120px;
 }
 
 #divNombre {
@@ -87,5 +87,6 @@ input:-moz-placeholder { color:#ffffff; }
 #tableroPuntuacion{
     background-color: #02020285!important;
     margin-top: 50px;
+
 }
 

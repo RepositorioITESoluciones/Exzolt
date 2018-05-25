@@ -130,26 +130,36 @@ function initEventos() {
             };
 
         }
-        console.log(file);
+        //console.log(file);
         $('#formularioRegistro').data('bootstrapValidator').validate();
         var n = $('#formularioRegistro').data('bootstrapValidator').isValid();
 
         if (n) {
             $('#botonReg').prop("disabled", true);
 
-            console.log("Lo que trae: " + nombreParametro);
+
             $.ajax({
                 async: true,
                 type: 'POST',
-                url: 'WSExzolt.asmx/verifiaSesion',
+                url: 'WSExzolt.asmx/insertarUsuario',
                 dataType: 'json',
                 contentType: 'application/json; charset=utf-8',
-                data: '{"nombre": "' + nombreParametro + '"}',
+                data: '{"nombre": "' + nombreParametro + '", "foto": "' + imagenBase64 + '"}',
                 success: function (response) {
-                    console.log("Respuesta: " + response.d);
+
                     $('#formularioRegistro').bootstrapValidator('destroy');
                     bootsVal();
-                    if (response.d == "true" || response.d == true) {
+
+                    if (response.d == "Error al insertar") {
+                        $.bigBox({
+                            title: "<center><p style='font-size: 20px'>¡Advertencia!</p></center>",
+                            content: "<center><p style='font-size: 20px'>Se presento un erro al insertar</p></center>",
+                            color: "#C46A69",
+                            timeout: "3000",
+                            icon: "fa fa-times fa-2x fadeInRight animated",
+                        });
+                    }
+                    if (response.d == "El usuario ya existe") {
                         $.bigBox({
                             title: "<center><p style='font-size: 20px'>¡Advertencia!</p></center>",
                             content: "<center><p style='font-size: 20px'>El nombre de jugador <b>" + nombreParametro + "</b> no esta disponible </p></center>",
@@ -158,34 +168,61 @@ function initEventos() {
                             icon: "fa fa-shield fadeInLeft animated",
                         });
 
-                        $('#botonReg').prop("disabled", false);
-                    } else {
-                        $.ajax({
-                            async: true,
-                            type: 'POST',
-                            url: 'WSExzolt.asmx/insertarUsuario',
-                            dataType: 'json',
-                            contentType: 'application/json; charset=utf-8',
-                            data: '{"nombre": "' + nombreParametro + '", "foto": "' + imagenBase64 + '"}',
-                            success: function (response) {
-                                $.bigBox({
-                                    title: "<center><p style='font-size: 20px'>¡Felicidades!</p></center>",
-                                    content: "<center><p style='font-size: 20px'>Tu numero de jugador es : <b>" + response.d + "</b> </p></center>",
-                                    color: "#739E73",
-                                    timeout: "3000",
-                                    icon: "fa fa-check"
-                                });
-                                $('#nombre').val('');
-                                $('#alias').val('');
-                                $('#botonReg').prop("disabled", false);
-                                $("#avatar").val(null);
-                                $("#img1").remove();
-                                $("#sectionImg").append(" <img id='img1' width='50px' height='50px'>");
-                            }
+                    }
+                    if (isNaN(response.d)) {
+
+                        $.bigBox({
+                            title: "<center><p style='font-size: 20px'>¡Advertencia!</p></center>",
+                            content: "<center><p style='font-size: 20px'>Se presento un erro al insertar</p></center>",
+                            color: "#C46A69",
+                            timeout: "3000",
+                            icon: "fa fa-times fa-2x fadeInRight animated",
                         });
+
+                    } else {
+                        $.bigBox({
+                            title: "<center><p style='font-size: 20px'>¡Felicidades!</p></center>",
+                            content: "<center><p style='font-size: 20px'>Tu número de jugador es : <b>" + response.d + "</b> </p></center>",
+                            color: "#739E73",
+                            timeout: "3000",
+                            icon: "fa fa-check"
+                        });
+                        $('#nombre').val('');
+                        $('#alias').val('');
+                        $('#botonReg').prop("disabled", false);
+                        $("#avatar").val(null);
+                        $("#img1").remove();
+                        $("#sectionImg").append(" <img id='img1' width='50px' height='50px'>");
                     }
                 }
             });
+
+            //console.log("Lo que trae: " + nombreParametro);
+            //$.ajax({
+            //    async: true,
+            //    type: 'POST',
+            //    url: 'WSExzolt.asmx/verifiaSesion',
+            //    dataType: 'json',
+            //    contentType: 'application/json; charset=utf-8',
+            //    data: '{"nombre": "' + nombreParametro + '"}',
+            //    success: function (response) {
+            //        $('#formularioRegistro').bootstrapValidator('destroy');
+            //        bootsVal();
+            //        if (response.d == "true" || response.d == true) {
+            //            $.bigBox({
+            //                title: "<center><p style='font-size: 20px'>¡Advertencia!</p></center>",
+            //                content: "<center><p style='font-size: 20px'>El nombre de jugador <b>" + nombreParametro + "</b> no esta disponible </p></center>",
+            //                color: "rgb(199, 145, 33)",
+            //                timeout: "3000",
+            //                icon: "fa fa-shield fadeInLeft animated",
+            //            });
+
+            //            $('#botonReg').prop("disabled", false);
+            //        } else {
+                        
+            //        }
+            //    }
+            //});
         } else {
         }
     });

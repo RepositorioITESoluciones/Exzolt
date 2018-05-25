@@ -1,0 +1,13 @@
+{
+  "User": {
+    "Id": 36,
+    "Username": "MdiazO",
+    "Name": "Mario Fernando Diaz Olivera",
+    "Email": "mariidiaz78@gmail.com",
+    "AvatarUrl": "https://secure.gravatar.com/avatar/e697ded5e04a98e1cd7cf8ac00faf460?s=80&d=identicon",
+    "PrivateToken": "4be71af7592422a93d9fbde2fd9db48edd4462e5204648e41e84d7d33b6d3af0",
+    "Host": "https://springlabsdevs.net",
+    "TwoFactorEnabled": false,
+    "ApiVersion": 3
+  }
+}

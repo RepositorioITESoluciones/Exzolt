@@ -15,8 +15,8 @@ namespace Exzolt.Framework.AccesoDatos
 
             try
             {
-                conexion = new SqlConnection(@"Data Source = 172.81.2.226\DOTNETSERVER; Initial Catalog = ExzoltBD; Persist Security Info = True; User ID = sa; Password = 12345");
-                // conexion = new SqlConnection(ConfigurationManager.ConnectionStrings[cadena].ConnectionString);
+                //conexion = new SqlConnection(@"Data Source = 172.81.2.226\DOTNETSERVER; Initial Catalog = ExzoltBD; Persist Security Info = True; User ID = sa; Password = 12345");
+                conexion = new SqlConnection(ConfigurationManager.ConnectionStrings[cadena].ConnectionString);
 
             }
             catch (SqlException sqlExp)

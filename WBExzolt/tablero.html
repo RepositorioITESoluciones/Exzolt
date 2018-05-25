@@ -23,7 +23,7 @@
     <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
     <link href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="css/general.css" rel="stylesheet" />
-    <link href="js/daterangepicker.css" rel="stylesheet" />
+    <!--<link href="js/daterangepicker.css" rel="stylesheet" />-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
     <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
@@ -51,73 +51,128 @@
 
 
     <style>
-            body {
-                font-family: 'Wallpoet', cursive !important;
-            }
+body {
+font-family: 'Wallpoet', cursive !important;
+}
+#articleRegistro3 {
+margin-top: -8% !important;
+}
+thead tr th {
+font-family: 'Press Start 2P', cursive !important;
+font-size: 16px !important;
+height: 100%;
+line-height: 20px;
+color: #000;
+text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;
+text-align: right;
+padding: 10px;
+border-radius: 50px 20px;
+border-color: #00e0ff;
+}
+.trstyle {
+/*border: 2px solid;
+border-color:#00e0ff;*/
+font-size: 25px;
+border: 3px solid #01E2FF !important;
+background-color: #000453;
+color: #FFF;
+text-align: center;
+padding: 10px;
+border-radius: 15px;
+}
 
-            #articleRegistro3 {
-                margin-top: -8% !important;
-            }
 
-            thead tr th {
-                font-family: 'Press Start 2P', cursive !important;
-                font-size: 14px !important;
-                height: 100%;
-                line-height: 30px;
-                /*background-color: #000453;*/
-                color: #000;
-                text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;
-                text-align: center;
-                padding: 10px;
-                border-radius: 50px 20px;
-                border-color: #00e0ff;
-            }
 
-            .trstyle {
-                /*border: 2px solid ;
-        border-color:#00e0ff;*/
-                border: 3px solid #01E2FF !important;
-                background-color: #000453;
-                color: #FFF;
-                /*text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;*/
-                text-align: center;
-                padding: 10px;
-                border-radius: 15px;
-            }
+tr td:last-child {
+border-top-right-radius: 25px;
+}
+tr td:last-child {
+border-bottom-right-radius: 25px;
+}
+table#TablaPuntaje tbody td {
+border-top: 2px solid #01E2FF;
+border-bottom: 2px solid #01E2FF;
+border-right: none;
+border-left: none;
+               
 
-            tr td:last-child {
-                border-top-right-radius: 20px;
-            }
 
-            tr td:last-child {
-                border-bottom-right-radius: 20px;
-            }
+}
+table#TablaPuntaje tbody td:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-left: 2px solid #01E2FF;
+    /*border-right: 2px solid #01E2FF;*/
+    border-collapse: separate !important;
+    border-spacing: 5px 10px !important;
+}
 
-            table#TablaPuntaje tbody td {
-                border-top: 2px solid #01E2FF;
-                border-bottom: 2px solid #01E2FF;
-                border-right: none;
-                border-left: none;
+table#TablaPuntaje tbody td:last-child {
+    border-right: 2px solid #01E2FF;
+}
+#TablaPuntaje {
+border-collapse: separate;
+border-spacing: 0px 5px;
+}
+table.scroll tbody,table.scroll thead tr { 
+    /*display: block;*/ 
+}
+table.scroll tbody {
+    height: 400px;
+    overflow-y: initial;
+    overflow-x:hidden;
+    text-align:center;
 
-            }
+    /*margin-top: 15px;*/
+}
+table.scroll tbody::-webkit-scrollbar{
+    width:10px;
+    /*background:#021b79*/
+    background-color:transparent;
+}
+table.scroll tbody::-webkit-scrollbar-thumb{
+    background-color:transparent;
+    /*background:rgba(255,255,255,.2);*/
+    border-radius:10px;
+    /*border-right:2px solid #021b79;*/
+}
+table.scroll tbody td,
+table.scroll thead th {
+    width: 100px;
+    height:35px;
+    /*border-right: 1px solid black;*/
 
-                table#TablaPuntaje tbody td:first-child {
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                    border-left: 2px solid #01E2FF;
-                    border-right: 2px solid #01E2FF;
-                    border-collapse: separate !important;
-                    border-spacing: 5px 10px !important;
-                }
+}
 
-                table#TablaPuntaje tbody td:last-child {
-                    border-right: 2px solid #01E2FF;
-                }
+.tdstylos{
 
-            #TablaPuntaje {
-                border-collapse: separate;
-                border-spacing: 0px 5px;
-            }
+border-right: 2px solid #01E2FF !IMPORTANT;
+border-top-right-radius: 25px; 
+border-bottom-right-radius: 25px;
+}
+.tdstyleleft {
+    width: auto !importan;
+    height: auto !importan;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+
+
+/*estilos invertido*/
+.encabesado{
+font-family: 'Press Start 2P', cursive !important;
+font-size: inherit;
+/*line-height: 20px;*/
+color: #000;
+text-shadow: -1px 0 #00ffb9, 0 1px #00ffb9, 1px 0 #00ffb9, 0 -1px #00ffb9;
+text-align: center;
+padding: 10px;
+}
+
+
+
+
     </style>
 </head>
  
@@ -129,20 +184,43 @@
              <article id="articleRegistro" class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></article>
                  <article id="articleRegistro2"  class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
                      <div id="articleRegistro3"  class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                         <div class="widget-body table-responsive" style="margin-top:25%; background-color:transparent !important; border: none">
-                             <table id="TablaPuntaje" class="" width="100%">
+                         <div class="widget-body table-responsive" style="margin-top:27%; background-color:transparent !important; border: none">
+                             <!--tabla horizontal-->
+                             <table id="TablaPuntaje" class="scroll table-responsive" width="100%">
                                  <thead>
                                      <tr>
-                                         <th data-class="expand">Foto</th>
-                                         <th>Nombre</th>
-                                         <th>Acaro</th>
-                                         <th >Gallina</th>
-                                         <th>Intentos</th>
-                                         <th>Score</th>
+                                         <th style="width:3%"></th>
+                                         <th style="text-align:center; width:30%" >Jugador</th>
+                                         <th style="text-align:center; width:auto">Ácaros</th>
+                                         <th style="text-align:center; width:auto">Gallinas</th>
+                                         <th style="text-align:center; width:auto">Intentos</th>
+                                         <th style="text-align:center; width:auto">Puntaje</th>
                                      </tr>
                                  </thead>
                                  <tbody id="tbodyTabla"></tbody>
                              </table>
+
+                             <!--tabla vertical-->
+
+                             <!--<table class="scroll table" style="width:100%">
+
+                                 <tr id="tblnombre">
+                                     <th class="encabesado" style="text-align:center; border:none"> <br /><br /><br />Jugador</th>
+                                 </tr>
+                                 <tr id="tblacaros">
+                                     <th class="encabesado" style="text-align:center; border:none">Ácaros</th>
+                                 </tr >
+                                 <tr id="tblgallinas">
+                                     <th class="encabesado" style="text-align:center; border:none">Gallinas</th>
+                                 </tr>
+                                 <tr id="tblintentos">
+                                     <th class="encabesado" style="text-align:center; border:none">Intentos</th>
+                                 </tr>
+                                 <tr id="tblpuntaje">
+                                     <th class="encabesado" style="text-align:center; border:none ;">Puntaje</th>
+                                 </tr>
+                             </table>-->
+
                          </div>
                       
                      </div>
@@ -311,7 +389,7 @@
         <script src="js/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
         <script src="js/plugin/timer/jquery.timer.js"></script>
         <!--Estilos para plugin para rango de fechas-->
-        <script src="js/daterangepicker.js"></script>
+        <!--<script src="js/daterangepicker.js"></script>-->
         <script src="js/moment.min.js"></script>
 
     </body>

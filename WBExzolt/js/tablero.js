@@ -3,15 +3,12 @@ var url;
 var rows;
 var data;
 $(function () {
-    console.log("Hola");
+    //console.log("Hola");
     initEventos();
    
     
 });
 function initEventos() {
-
- 
-
     $.ajax({
         async: false,
         type: 'POST',
@@ -19,24 +16,65 @@ function initEventos() {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
-            console.log(data.d);
-                var filas = data.d.length;
-                for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
-                    var nuevafila = "<tr class='trstyle'><td>" +
-                    "<img style='width:35%; height:8%;' src='" + data.d[i].foto + "'/>" + "</td><td>" +
-                    data.d[i].nombre + "</td><br><br><td>" +
-                    data.d[i].acaro + "</td><td>" +
-                     data.d[i].gallina + "</td><td>" +
-                    data.d[i].nIntentos + "</td><td>" +
-                    data.d[i].score + "</td></tr>"
-                    $("#tbodyTabla").append(nuevafila)
+            
+            var filas = data.d.length;
+            var numero = 0;
+            var nuevafila = "";
+
+            var tblnumero=""            
+            var tblnombre=""
+            var tblacaros=""
+            var tblgallinas=""
+            var tblintentos=""
+            var tblpuntaje = ""
+
+
+               for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
+
+                    console.log(i+": "+ data.d[i].nombre);
+                    numero = i + 1;
+                    nuevafila += "<tr class='trstyle'>"
+                    nuevafila += "<td>" + numero + "</td>"
+                    nuevafila += "<td class='tdstylos' style='text-align: left !IMPORTANT;'><img style='width:35px; height: 35px !Importan; ' src='" + data.d[i].foto + "'/>    " + data.d[i].nombre + "</td>"
+                    nuevafila += "<td class='tdstyleleft'>" + data.d[i].nAcaros + "</td>"
+                    nuevafila += "<td class='tdstylos'>" + data.d[i].nGallinas + "</td>"
+                    nuevafila += "<td class='tdstyleleft'>" + data.d[i].nIntentos + "</td>"
+                    nuevafila += "<td>" + data.d[i].puntaje + "</td>"
+                    nuevafila += "</tr>"
+                    
                 }
+            $("#tbodyTabla").append(nuevafila) 
+
+            //for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
+
+            //    console.log(i+": "+ data.d[i].nombre);
+            //    numero = i + 1;
+            //    nuevafila += "<tr class='trstyle'>"
+            //    //tblnumero += "<td class='trstyle'>" + numero + "</td>"
+            //    tblnombre += "<td class='trstyle'style='text-align: left !IMPORTANT;'>" + numero + " <img style='width:35%; height:35% !Importan; ' src='" + data.d[i].foto + "'/>    " + data.d[i].nombre + "</td>"
+            //    //nuevafila += "<td class='tdstylos'>" + data.d[i].nombre + "</td>"
+            //    tblacaros += "<td class='trstyle'>" + data.d[i].acaro + "</td>"
+            //    tblgallinas += "<td class='trstyle'>" + data.d[i].gallina + "</td>"
+            //    tblintentos += "<td class='trstyle'>" + data.d[i].nIntentos + "</td>"
+            //    tblpuntaje += "<td class='trstyle'>" + data.d[i].score + "</td>"
+            //    nuevafila += "</tr>"
+
+            //}
+
+
+
+            //$("#tblnumero").append(tblnumero)
+            //$("#tblnombre").append(tblnombre)
+            //$("#tblacaros").append(tblacaros)
+            //$("#tblgallinas").append(tblgallinas)
+            //$("#tblintentos").append(tblintentos)
+            //$("#tblpuntaje").append(tblpuntaje)
         }
     });
 
 
     //initDataTable();
-    //setInterval(cargarTabla, 2000);
+    setInterval(cargarTabla, 2000);
 }
 
 function initDataTable() {
@@ -139,9 +177,6 @@ function initDataTable() {
         edit = 1;
     });
 }
-
-
-
 //Funcion encargada de refrescar la tabla despues de haber creado, editado o eliminado un regustro
 function cargarTabla() {
     $("#tbodyTabla").empty();
@@ -152,21 +187,59 @@ function cargarTabla() {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
-            console.log(data.d);
-            //if (data.respuesta == exito) {
+
             var filas = data.d.length;
+            var numero = 0;
+            var nuevafila = "";
+
+            var tblnumero = ""
+            var tblnombre = ""
+            var tblacaros = ""
+            var tblgallinas = ""
+            var tblintentos = ""
+            var tblpuntaje = ""
+
 
             for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
-                var nuevafila = "<tr><td>" +
-                data.d[i].foto + "</td><td>" +
-                data.d[i].nombre + "</td><td>" +
-                data.d[i].gallina + "</td><td>" +
-                data.d[i].acaro + "</td><td>" +
-                data.d[i].score + "</td></tr>"
 
-                $("#TablaPuntaje").append(nuevafila)
+                console.log(i + ": " + data.d[i].nombre);
+                numero = i + 1;
+                nuevafila += "<tr class='trstyle'>"
+                nuevafila += "<td>" + numero + "</td>"
+                nuevafila += "<td class='tdstylos' style='text-align: left !IMPORTANT;'><img style='width:35px; height: 35px !Importan; ' src='" + data.d[i].foto + "'/>    " + data.d[i].nombre + "</td>"
+                nuevafila += "<td class='tdstyleleft'>" + data.d[i].nAcaros + "</td>"
+                nuevafila += "<td class='tdstylos'>" + data.d[i].nGallinas + "</td>"
+                nuevafila += "<td class='tdstyleleft'>" + data.d[i].nIntentos + "</td>"
+                nuevafila += "<td>" + data.d[i].puntaje + "</td>"
+                nuevafila += "</tr>"
+
             }
+            $("#tbodyTabla").append(nuevafila)
+
+            //for (i = 0 ; i < filas; i++) { //cuenta la cantidad de registros
+
+            //    console.log(i+": "+ data.d[i].nombre);
+            //    numero = i + 1;
+            //    nuevafila += "<tr class='trstyle'>"
+            //    //tblnumero += "<td class='trstyle'>" + numero + "</td>"
+            //    tblnombre += "<td class='trstyle'style='text-align: left !IMPORTANT;'>" + numero + " <img style='width:35%; height:35% !Importan; ' src='" + data.d[i].foto + "'/>    " + data.d[i].nombre + "</td>"
+            //    //nuevafila += "<td class='tdstylos'>" + data.d[i].nombre + "</td>"
+            //    tblacaros += "<td class='trstyle'>" + data.d[i].acaro + "</td>"
+            //    tblgallinas += "<td class='trstyle'>" + data.d[i].gallina + "</td>"
+            //    tblintentos += "<td class='trstyle'>" + data.d[i].nIntentos + "</td>"
+            //    tblpuntaje += "<td class='trstyle'>" + data.d[i].score + "</td>"
+            //    nuevafila += "</tr>"
+
             //}
+
+
+
+            //$("#tblnumero").append(tblnumero)
+            //$("#tblnombre").append(tblnombre)
+            //$("#tblacaros").append(tblacaros)
+            //$("#tblgallinas").append(tblgallinas)
+            //$("#tblintentos").append(tblintentos)
+            //$("#tblpuntaje").append(tblpuntaje)
         }
     });
 }

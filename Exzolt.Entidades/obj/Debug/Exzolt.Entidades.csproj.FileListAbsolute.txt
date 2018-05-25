@@ -8,3 +8,8 @@ C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Entidades\bin\Debug\Exzolt
 C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.csprojResolveAssemblyReference.cache
 C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.dll
 C:\Users\carlos.garcia\Documents\GitHub\Exzolt\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.pdb
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Entidades\bin\Debug\Exzolt.Entidades.dll
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Entidades\bin\Debug\Exzolt.Entidades.pdb
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.dll
+C:\Users\Mario\Documents\GitHub\Exzolt\Exzolt.Entidades\obj\Debug\Exzolt.Entidades.pdb
